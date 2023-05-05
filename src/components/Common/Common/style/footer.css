@@ -24,10 +24,108 @@
     padding: 20px;
     border: none;
     outline: none;
-    height: 30px;
+    height: 30px
 }
 .newletter i {
     padding: 12px;
     color: #1eb2a1;
     background-color: #fff;
+}
+footer{
+    background-color: #eeee;
+}
+footer .container{
+    display: grid;
+    grid-template-columns: 3fr 2fr 2fr 4fr 3fr;
+    grid-gap: 30px;
+}
+footer .logo span{
+    color: #1eb2a6;
+    font-size: 14px;
+}
+footer .logo p{
+    color: grey;
+    margin: 30px 0 15px 0;
+}
+footer .logo .icon{
+background-color: #1eb2a6;
+color: white;
+margin-right: 10px;
+}
+footer h3{
+    margin-bottom: 40px;
+    font-weight: 500;
+}
+footer .logo ul li{
+    margin-bottom: 20px;
+}
+footer .link li::before{
+    content: "->";
+    color: #1eb2a6;
+    margin-left: 5px;
+}
+footer .items{
+    margin-bottom: 30px;
+}
+footer .items img{
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    margin-right: 10px;
+    object-fit: cover;
+}
+footer .items span,
+footer .items i{
+    font-size: 12px;
+    color: #1eb2a6;
+    margin-right: 5px;
+    text-transform: capitalize;
+}
+footer h4{
+    font-weight: 400;
+    margin-top: 5px;
+}
+footer .last ul li{
+    display: flex;
+    margin-bottom: 50px;
+}
+footer .last i{
+    width: 60px;
+    font-size: 20px;
+    color: #1eb2a6;
+}
+.legal{
+    text-align: center;
+    padding: 50px 0;
+    color: gray;
+    background-color: #e9e9e9;
+}
+footer .box.logo h1{
+    font-size: 70px;
+    color: grey;
+}
+footer .box.logo span{
+    font-size: 50px;
+    color: #1eb2a6;
+}
+/* footer .box.logo p{
+
+} */
+
+
+.box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo_div{
+    display: flex;
+    align-items: flex-start;
+    justify-content: startm;
+}
+.container_desc{
+   width: 400px;
+   font-size: 22px;
 }

@@ -1,9 +1,11 @@
-
 import './App.css';
 import Header from './components/Common/Common/Header';
 import Footer from './components/Common/Common/Footer';
-import { BrowserRouter as Router, Routes} from "react-router-dom"
+import { BrowserRouter as Router, Routes ,Route} from "react-router-dom"
 import React, {Component} from 'react';
+import Home from "./components/Home/Home";
+
+const Homepage = React.lazy(() => import('./pages/homepage/HomePage'))
 
 function App() {
   return (
@@ -12,13 +14,9 @@ function App() {
     <>
 
     <Router>
-    <Header />
       <Routes>
-       {/* <Route path = '/about'>
-          <About/>
-        </Route>*/}
-      </Routes>
-      <Footer  />
+     <Route path = '/' exact element = {<Homepage/>} />
+    </Routes>
     </Router>
     </>
   );
