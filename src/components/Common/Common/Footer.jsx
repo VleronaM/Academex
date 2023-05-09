@@ -9,7 +9,7 @@ const Footer = () => {
             <section className="newletter">
                 <div className="container flexSB">
                     <div className="left row">
-                        <h1>Newsletter- Stay tune and get the latest update</h1>
+                        <h1>Newsletter - Stay tune and get the latest update</h1>
                         <span>far far away, behind the word mountains</span>
                     </div>
                     <div className="right row">
@@ -37,6 +37,9 @@ const Footer = () => {
                             <li>About Us</li>
                             <li>About Us</li>
                         </ul>
+                    </div>
+                    <div className="bxo">
+                        <h3>Recent posts</h3>
                     </div>
                 </div>
             </footer>
