@@ -28,7 +28,7 @@ body {
   border-radius: 50%;
   text-align: center;
   background-color: rgba(255, 255, 255, 0.3);
-  color: aqua;
+  color: #1eb2a6;
   transition: 0.5s;
 }
 
@@ -146,7 +146,33 @@ p {
   display: flex;
 }
 
+.grid2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 30px;
+}
+
+.grid3 {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 9px;
+}
+
+.padding {
+  padding: 80px;
+}
+
+.shadow {
+  box-shadow: 0 5px 25px -2px rgba(0 0 0 /6%);
+  background-color: #fff;
+
+
+}
+
 @media screen and (max-width: 768px) {
+
+  .grid2,
+  .grid3,
   .grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -155,5 +181,9 @@ p {
     background-position: center;
     padding-top: 50%;
     height: 80vh;
+  }
+
+  .marigin{
+    margin-top: 90.2%;
   }
 }

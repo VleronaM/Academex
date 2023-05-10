@@ -42,3 +42,110 @@ export const awrapper2 = [
         title: "COURSES",
     },
 ]
+
+export const coursesCard = [
+    {
+        id: 1,
+        cover: "https://images.unsplash.com/photo-1627398242454-45a1465c2479?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
+        coursesName: "Introducing to Software Engineering",
+        courTeacher: [
+            {
+                dcover: "https://images.unsplash.com/photo-1601655781320-205e34c94eb1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+                name: "by John Smith",
+                totalTime: "50 lectures (190 hrs)",
+            },
+        ],
+        priceAll: "$100 All Course",
+        pricePer: "$15 per month",
+    },
+    {
+        id: 2,
+        cover: "https://images.unsplash.com/photo-1627398242454-45a1465c2479?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
+        coursesName: "Introducing to Software Engineering",
+        courTeacher: [
+            {
+                dcover: "https://images.unsplash.com/photo-1601655781320-205e34c94eb1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+                name: "by John Smith",
+                totalTime: "50 lectures (190 hrs)",
+            },
+        ],
+        priceAll: "$100 All Course",
+        pricePer: "$15 per month",
+    },
+    {
+        id: 3,
+        cover: "https://images.unsplash.com/photo-1627398242454-45a1465c2479?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
+        coursesName: "Introducing to Software Engineering",
+        courTeacher: [
+            {
+                dcover: "https://images.unsplash.com/photo-1627398242454-45a1465c2479?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80s",
+                name: "by John Smith",
+                totalTime: "50 video (190 hrs)",
+            },
+        ],
+        priceAll: "$100 All Course",
+        pricePer: "$15 per month",
+    },
+    {
+        id: 4,
+        cover: "https://images.unsplash.com/photo-1627398242454-45a1465c2479?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
+        coursesName: "Introducing to Software Engineering",
+        courTeacher: [
+            {
+                dcover: "https://images.unsplash.com/photo-1601655781320-205e34c94eb1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+                name: "by John Smith",
+                totalTime: "asjkh akdhja dajkshda ajkdha asdjkhas dasjkdhasd dkjahsdka",
+            },
+        ],
+        priceAll: "$100 All Course",
+        pricePer: "$15 per month",
+    },
+]
+
+export const categories = [
+    {
+        cover: "https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/null/external-programing-computer-programming-flaticons-lineal-color-flat-icons-2.png",
+        courseName: "UI/UX Design Courses",
+        course: "25 Courses",
+    },
+    {
+        cover: "https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/null/external-programing-computer-programming-flaticons-lineal-color-flat-icons-2.png",
+        courseName: "Graphic Design",
+        course: "25 Courses",
+    },
+    {
+        cover: "https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/null/external-programing-computer-programming-flaticons-lineal-color-flat-icons-2.png",
+        courseName: "Computer Science",
+        course: "10 Courses",
+    },
+    {
+        cover: "https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/null/external-programing-computer-programming-flaticons-lineal-color-flat-icons-2.png",
+        courseName: "UI/UX Design Courses",
+        course: "25 Courses",
+    },
+    {
+        cover: "https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/null/external-programing-computer-programming-flaticons-lineal-color-flat-icons-2.png",
+        courseName: "Art & Design",
+        course: "25 Courses",
+    },
+    {
+        cover: "https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/null/external-programing-computer-programming-flaticons-lineal-color-flat-icons-2.png",
+        courseName: "Computer Science",
+        course: "10 Courses",
+    },
+    {
+        cover: "https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/null/external-programing-computer-programming-flaticons-lineal-color-flat-icons-2.png",
+        courseName: "UI/UX Design Courses",
+        course: "25 Courses",
+    },
+    {
+        cover: "https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/null/external-programing-computer-programming-flaticons-lineal-color-flat-icons-2.png",
+        courseName: "Art & Design",
+        course: "25 Courses",
+    },
+    {
+        cover: "https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/null/external-programing-computer-programming-flaticons-lineal-color-flat-icons-2.png",
+        courseName: "Computer Science",
+        course: "10 Courses",
+    },
+]
