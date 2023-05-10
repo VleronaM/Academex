@@ -149,3 +149,27 @@ export const categories = [
         course: "10 Courses",
     },
 ]
+
+export const team = [
+    {
+        cover: "https://images.unsplash.com/photo-1590086782957-93c06ef21604?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+        name: "Ph.D Adrian Molises",
+        work: "DEVELOPER AND LEAD INSTRUCTOR",
+    },
+    {
+        cover: "https://images.unsplash.com/photo-1544168190-79c17527004f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80",
+        name: "Ph.D Arthur MaGregor",
+        work: "DEVELOPER AND LEAD INSTRUCTOR",
+    },
+    {
+        cover: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+        name: "Ph.D Anna Hanzen",
+        work: "DEVELOPER AND LEAD INSTRUCTOR",
+    },
+    {
+        cover: "https://images.unsplash.com/photo-1563132337-f159f484226c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+        name: "Ph.D Emma Wooden",
+        work: "DEVELOPER AND LEAD INSTRUCTOR",
+    },
+
+]

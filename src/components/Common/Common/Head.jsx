@@ -5,9 +5,8 @@ const Head = () => {
     <div>
       <section className='head'>
         <div className='container flexSB'>
-          <div className='logo'>
-            <h1>academex</h1>
-            <span>E-Learning</span>
+          <div id='logoheader'>
+            <img src="./logo/academex_pink@2x.png" alt="" />
           </div>
           <div className='social'>
             <i className='fab fa-facebook icon'></i>
