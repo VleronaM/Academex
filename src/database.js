@@ -153,23 +153,62 @@ export const categories = [
 export const team = [
     {
         cover: "https://images.unsplash.com/photo-1590086782957-93c06ef21604?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
-        name: "Ph.D Adrian Molises",
+        name: "Ph.D Filan Fisteku",
         work: "DEVELOPER AND LEAD INSTRUCTOR",
     },
     {
         cover: "https://images.unsplash.com/photo-1544168190-79c17527004f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80",
-        name: "Ph.D Arthur MaGregor",
+        name: "Ph.D Filan Fisteku",
         work: "DEVELOPER AND LEAD INSTRUCTOR",
     },
     {
         cover: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
-        name: "Ph.D Anna Hanzen",
+        name: "Ph.D Filan Fisteku",
         work: "DEVELOPER AND LEAD INSTRUCTOR",
     },
     {
         cover: "https://images.unsplash.com/photo-1563132337-f159f484226c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
-        name: "Ph.D Emma Wooden",
+        name: "Ph.D Filan Fisteku",
         work: "DEVELOPER AND LEAD INSTRUCTOR",
     },
 
+]
+
+
+export const news = [
+    {
+        id: 1,
+        date: "May 11, 2023",
+        title: "Get to Know MyDev | Community Meetup",
+        desc: "MyDev, is a Chicago-based company, is a platform determined to make it easy and affordable to dynamically create and host a website. Such a service saves time and doesn’t break the for small businesses just looking to startup in Kosovo Join us on Thursday, May 19, from 17:30 at ICK, to meet the team, learn about their services, products, opportunities and digital solutions, including: Claritask, Claritick, Irevu, Convosio, and Morsix",
+        cover: "../back8.jpg",
+    },
+    {
+        id: 2,
+        date: "May 12, 2023",
+        title: "Get to Know MyDev | Community Meetup",
+        desc: "MyDev, is a Chicago-based company, is a platform determined to make it easy and affordable to dynamically create and host a website. Such a service saves time and doesn’t break the for small businesses just looking to startup in Kosovo Join us on Thursday, May 19, from 17:30 at ICK, to meet the team, learn about their services, products, opportunities and digital solutions, including: Claritask, Claritick, Irevu, Convosio, and Morsix",
+        cover: "../back8.jpg",
+    },
+    {
+        id: 3,
+        date: "May 11, 2023",
+        title: "Get to Know MyDev | Community Meetup",
+        desc: "MyDev, is a Chicago-based company, is a platform determined to make it easy and affordable to dynamically create and host a website. Such a service saves time and doesn’t break the for small businesses just looking to startup in Kosovo Join us on Thursday, May 19, from 17:30 at ICK, to meet the team, learn about their services, products, opportunities and digital solutions, including: Claritask, Claritick, Irevu, Convosio, and Morsix",
+        cover: "../back8.jpg",
+    },
+    {
+        id: 4,
+        date: "May 11, 2023",
+        title: "Get to Know MyDev | Community Meetup",
+        desc: "MyDev, is a Chicago-based company, is a platform determined to make it easy and affordable to dynamically create and host a website. Such a service saves time and doesn’t break the for small businesses just looking to startup in Kosovo Join us on Thursday, May 19, from 17:30 at ICK, to meet the team, learn about their services, products, opportunities and digital solutions, including: Claritask, Claritick, Irevu, Convosio, and Morsix",
+        cover: "../back8.jpg",
+    },
+    {
+        id: 5,
+        date: "May 11, 2023",
+        title: "Get to Know MyDev | Community Meetup",
+        desc: "MyDev, is a Chicago-based company, is a platform determined to make it easy and affordable to dynamically create and host a website. Such a service saves time and doesn’t break the for small businesses just looking to startup in Kosovo Join us on Thursday, May 19, from 17:30 at ICK, to meet the team, learn about their services, products, opportunities and digital solutions, including: Claritask, Claritick, Irevu, Convosio, and Morsix",
+        cover: "../back8.jpg",
+    },
 ]
