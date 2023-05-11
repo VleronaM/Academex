@@ -12,7 +12,7 @@
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    background-color: #1eb2a6;
+    background-color: #E90064;
     padding: 15px;
 }
 
@@ -20,14 +20,15 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border: 20px solid #1eb2a6;
+    border: 5px solid gray;
 }
 
 .outline-btn:hover {
-    background-color: #1eb2a6;
+    background-color: #E90064;
     color: #fff;
 
 }
+
 /* kategorite -------------------------------------------------- */
 .online {
     text-align: center;
@@ -67,7 +68,7 @@
     padding: 5px 20px;
     font-weight: 500;
     font-size: 20px;
-    color: #1eb2a6;
+    color: #E90064;
     border-radius: 5px;
 }
 
@@ -76,5 +77,5 @@
 }
 
 .online .box:hover {
-    background-color: #1eb2a6;
+    background-color: #E90064;
 }

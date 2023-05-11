@@ -94,7 +94,7 @@ export const coursesCard = [
             {
                 dcover: "https://images.unsplash.com/photo-1601655781320-205e34c94eb1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
                 name: "by John Smith",
-                totalTime: "asjkh akdhja dajkshda ajkdha asdjkhas dasjkdhasd dkjahsdka",
+                totalTime: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, aperiam. Exercitationem porro, culpa ipsam nihil vero illum repellat odio eum! Amet harum corrupti exercitationem? Saepe iste nemo quasi perferendis vero!Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, aperiam. Exercitationem porro, culpa ipsam nihil vero illum repellat odio eum! Amet harum corrupti exercitationem? Saepe iste nemo quasi perferendis vero!",
             },
         ],
         priceAll: "$100 All Course",

@@ -9,8 +9,9 @@
 }
 
 #logoheader img {
-  width: 250px;
-  height: 70px;
+  width: 288px;
+  height: 58px;
+
 }
 
 .head .icon {
@@ -38,11 +39,13 @@ header ul li a {
 }
 
 header ul li a:hover {
-  color: #1eb2a6;
+  color: #E90064;
+  text-shadow: 1px 1px 1px #E90064;
+
 }
 
 .start {
-  background-color: #1eb2a6;
+  background-color: #E90064;
   padding: 30px 70px;
   color: #fff;
   clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%);
@@ -59,7 +62,7 @@ header ul li a:hover {
 
   header {
     margin: 0;
-    background-color: #1eb2a6;
+    background-color: #E90064;
     position: relative;
   }
 
@@ -73,7 +76,7 @@ header ul li a:hover {
 
   .toggle {
     display: block;
-    background-color: #1eb2a6;
+    background-color: #E90064;
     color: #fff;
     font-size: 30px;
     position: relative;
@@ -90,6 +93,6 @@ header ul li a:hover {
     top: 7vh;
     left: 0;
     width: 100%;
-    background-color: #1eb2a6;
+    background-color: #E90064;
   }
 }
