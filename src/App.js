@@ -9,6 +9,7 @@ import CourseHome from './components/allcourses/CourseHome';
 import Team from './components/team/Team';
 import News from './components/news/News';
 import Categories from './components/categories/Categories';
+import Books from './components/books/Books';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/courses" element={<CourseHome />} />
           <Route path="/team" element={<Team />} />
           <Route path="/news" element={<News />} />
+          <Route path="/books" element={<Books />} />
         </Routes>
       </Router>
     </>

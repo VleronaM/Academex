@@ -212,3 +212,148 @@ export const news = [
         cover: "../back8.jpg",
     },
 ]
+
+export const books = [
+    {
+        id: 99,
+        name: "The C++ Programming",
+        cover: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.thenile.io%2Fr1000%2F9780321958327.jpg&f=1&nofb=1&ipt=15ad346def77a11f7680ef8865e3856373b6d6004f512c7715d53cf30f184266&ipo=images",
+        author: "Bjarne Stroustrup"
+    },
+    {
+        id: 1,
+        name: "Python Programming",
+        cover: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2F2.bp.blogspot.com%2F-o82RGYeRQLk%2FWhe3sn8I0pI%2FAAAAAAAANJ4%2FdI3PIAUuTXYZ5qubhCxXmURhbqdumrTIgCLcBGAs%2Fs1600%2FPython%252Bprogramming%252BBook%252Bby%252BSheetal%252BTaneja%252Band%252BNaveen%252BKumar.jpg&f=1&nofb=1&ipt=a5603a5e352a81b217f935769e05e7e650502b0509bc8f1b75e9069c63ad7827&ipo=images",
+        author: "Shetal Taneja"
+    },
+    {
+        id: 2,
+        name: "Java Programing",
+        cover: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.fHwezjRSlNL9N9YsnDpdmQHaJz%26pid%3DApi&f=1&ipt=d9e7cd498a1d8f781cae2e2fed93f8d3130f0593899a196cf838830ec0859be8&ipo=images",
+        author: "K.Sunasumdaram"
+    },
+    {
+        id: 3,
+        name: "The C++ Programming",
+        cover: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.thenile.io%2Fr1000%2F9780321958327.jpg&f=1&nofb=1&ipt=15ad346def77a11f7680ef8865e3856373b6d6004f512c7715d53cf30f184266&ipo=images",
+        author: "Bjarne Stroustrup"
+    },
+
+    {
+        id: 14,
+        name: "Engineering Mathematics-1",
+        cover: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.thenile.io%2Fr1000%2F9789352301096.jpg%3Fr%3D5ef03ba91e94c&f=1&nofb=1&ipt=39b68e84c176754a681fca35dc90f92bea2ec6aa3d2b78e9c986c36b1f34a435&ipo=images",
+        author: "N.Yadya"
+    },
+    {
+        id: 33,
+        name: "The C++ Programming",
+        cover: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.thenile.io%2Fr1000%2F9780321958327.jpg&f=1&nofb=1&ipt=15ad346def77a11f7680ef8865e3856373b6d6004f512c7715d53cf30f184266&ipo=images",
+        author: "Bjarne Stroustrup"
+    },
+    {
+        id: 25,
+        name: "Java Programing",
+        cover: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.fHwezjRSlNL9N9YsnDpdmQHaJz%26pid%3DApi&f=1&ipt=d9e7cd498a1d8f781cae2e2fed93f8d3130f0593899a196cf838830ec0859be8&ipo=images",
+        author: "K.Sunasumdaram"
+    }, {
+        id: 34,
+        name: "The C++ Programming",
+        cover: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.thenile.io%2Fr1000%2F9780321958327.jpg&f=1&nofb=1&ipt=15ad346def77a11f7680ef8865e3856373b6d6004f512c7715d53cf30f184266&ipo=images",
+        author: "Bjarne Stroustrup"
+    },
+    {
+        id: 21,
+        name: "Python Programming",
+        cover: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2F2.bp.blogspot.com%2F-o82RGYeRQLk%2FWhe3sn8I0pI%2FAAAAAAAANJ4%2FdI3PIAUuTXYZ5qubhCxXmURhbqdumrTIgCLcBGAs%2Fs1600%2FPython%252Bprogramming%252BBook%252Bby%252BSheetal%252BTaneja%252Band%252BNaveen%252BKumar.jpg&f=1&nofb=1&ipt=a5603a5e352a81b217f935769e05e7e650502b0509bc8f1b75e9069c63ad7827&ipo=images",
+        author: "Shetal Taneja"
+    },
+    {
+        id: 32,
+        name: "Java Programing",
+        cover: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.fHwezjRSlNL9N9YsnDpdmQHaJz%26pid%3DApi&f=1&ipt=d9e7cd498a1d8f781cae2e2fed93f8d3130f0593899a196cf838830ec0859be8&ipo=images",
+        author: "K.Sunasumdaram"
+    }, {
+        id: 39,
+        name: "The C++ Programming",
+        cover: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.thenile.io%2Fr1000%2F9780321958327.jpg&f=1&nofb=1&ipt=15ad346def77a11f7680ef8865e3856373b6d6004f512c7715d53cf30f184266&ipo=images",
+        author: "Bjarne Stroustrup"
+    },
+    {
+        id: 15,
+        name: "Engineering Mathematics-1",
+        cover: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.thenile.io%2Fr1000%2F9789352301096.jpg%3Fr%3D5ef03ba91e94c&f=1&nofb=1&ipt=39b68e84c176754a681fca35dc90f92bea2ec6aa3d2b78e9c986c36b1f34a435&ipo=images",
+        author: "N.Yadya"
+    },
+    {
+        id: 99,
+        name: "The C++ Programming",
+        cover: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.thenile.io%2Fr1000%2F9780321958327.jpg&f=1&nofb=1&ipt=15ad346def77a11f7680ef8865e3856373b6d6004f512c7715d53cf30f184266&ipo=images",
+        author: "Bjarne Stroustrup"
+    },
+    {
+        id: 1,
+        name: "Python Programming",
+        cover: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2F2.bp.blogspot.com%2F-o82RGYeRQLk%2FWhe3sn8I0pI%2FAAAAAAAANJ4%2FdI3PIAUuTXYZ5qubhCxXmURhbqdumrTIgCLcBGAs%2Fs1600%2FPython%252Bprogramming%252BBook%252Bby%252BSheetal%252BTaneja%252Band%252BNaveen%252BKumar.jpg&f=1&nofb=1&ipt=a5603a5e352a81b217f935769e05e7e650502b0509bc8f1b75e9069c63ad7827&ipo=images",
+        author: "Shetal Taneja"
+    },
+    {
+        id: 2,
+        name: "Java Programing",
+        cover: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.fHwezjRSlNL9N9YsnDpdmQHaJz%26pid%3DApi&f=1&ipt=d9e7cd498a1d8f781cae2e2fed93f8d3130f0593899a196cf838830ec0859be8&ipo=images",
+        author: "K.Sunasumdaram"
+    },
+    {
+        id: 3,
+        name: "The C++ Programming",
+        cover: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.thenile.io%2Fr1000%2F9780321958327.jpg&f=1&nofb=1&ipt=15ad346def77a11f7680ef8865e3856373b6d6004f512c7715d53cf30f184266&ipo=images",
+        author: "Bjarne Stroustrup"
+    },
+
+    {
+        id: 14,
+        name: "Engineering Mathematics-1",
+        cover: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.thenile.io%2Fr1000%2F9789352301096.jpg%3Fr%3D5ef03ba91e94c&f=1&nofb=1&ipt=39b68e84c176754a681fca35dc90f92bea2ec6aa3d2b78e9c986c36b1f34a435&ipo=images",
+        author: "N.Yadya"
+    },
+    {
+        id: 33,
+        name: "The C++ Programming",
+        cover: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.thenile.io%2Fr1000%2F9780321958327.jpg&f=1&nofb=1&ipt=15ad346def77a11f7680ef8865e3856373b6d6004f512c7715d53cf30f184266&ipo=images",
+        author: "Bjarne Stroustrup"
+    },
+    {
+        id: 25,
+        name: "Java Programing",
+        cover: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.fHwezjRSlNL9N9YsnDpdmQHaJz%26pid%3DApi&f=1&ipt=d9e7cd498a1d8f781cae2e2fed93f8d3130f0593899a196cf838830ec0859be8&ipo=images",
+        author: "K.Sunasumdaram"
+    }, {
+        id: 34,
+        name: "The C++ Programming",
+        cover: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.thenile.io%2Fr1000%2F9780321958327.jpg&f=1&nofb=1&ipt=15ad346def77a11f7680ef8865e3856373b6d6004f512c7715d53cf30f184266&ipo=images",
+        author: "Bjarne Stroustrup"
+    },
+    {
+        id: 21,
+        name: "Python Programming",
+        cover: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2F2.bp.blogspot.com%2F-o82RGYeRQLk%2FWhe3sn8I0pI%2FAAAAAAAANJ4%2FdI3PIAUuTXYZ5qubhCxXmURhbqdumrTIgCLcBGAs%2Fs1600%2FPython%252Bprogramming%252BBook%252Bby%252BSheetal%252BTaneja%252Band%252BNaveen%252BKumar.jpg&f=1&nofb=1&ipt=a5603a5e352a81b217f935769e05e7e650502b0509bc8f1b75e9069c63ad7827&ipo=images",
+        author: "Shetal Taneja"
+    },
+    {
+        id: 32,
+        name: "Java Programing",
+        cover: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.fHwezjRSlNL9N9YsnDpdmQHaJz%26pid%3DApi&f=1&ipt=d9e7cd498a1d8f781cae2e2fed93f8d3130f0593899a196cf838830ec0859be8&ipo=images",
+        author: "K.Sunasumdaram"
+    }, {
+        id: 39,
+        name: "The C++ Programming",
+        cover: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.thenile.io%2Fr1000%2F9780321958327.jpg&f=1&nofb=1&ipt=15ad346def77a11f7680ef8865e3856373b6d6004f512c7715d53cf30f184266&ipo=images",
+        author: "Bjarne Stroustrup"
+    },
+    {
+        id: 15,
+        name: "Engineering Mathematics-1",
+        cover: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.thenile.io%2Fr1000%2F9789352301096.jpg%3Fr%3D5ef03ba91e94c&f=1&nofb=1&ipt=39b68e84c176754a681fca35dc90f92bea2ec6aa3d2b78e9c986c36b1f34a435&ipo=images",
+        author: "N.Yadya"
+    },
+]
