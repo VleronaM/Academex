@@ -12,16 +12,16 @@ const Hero = () => {
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur odio, consectetur debitis autem id cumque nihil, consequatur recusandae adipisci dolorem saepe quos molestias repellendus atque quibusdam blanditiis eos quod quis.</p>
                         <div className='button'>
                             <button className="primary-btn">
-                                Get Started Now <i className='fa fa-long-arrow-alt-right'></i>
+                                View Courses<i className='fa fa-long-arrow-alt-right'></i>
                             </button>
                             <button>
-                                View Courses <i className='fa fa-long-arrow-alt-right'></i>
+                                Download free books! <i className='fa fa-long-arrow-alt-right'></i>
                             </button>
                         </div>
                     </div>
                 </div>
             </section>
-            <div className="margin"></div>
+            <div className="marigin"></div>
         </>
     )
 }
