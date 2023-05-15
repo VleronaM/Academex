@@ -1,0 +1,36 @@
+.news img {
+    width: 100%;
+    height: 100%;
+}
+
+.news .text {
+    padding: 40px 30px;
+}
+
+.news h1 {
+    font-weight: 500;
+    font-size: 21px;
+    line-height: 28px;
+    margin: 21px 0;
+    transition: 0.5s;
+}
+
+.news h1:hover {
+    color: #E90064;
+    cursor: pointer;
+}
+
+.news span {
+    text-transform: uppercase;
+    font-weight: 500;
+    color: #E90064;
+
+}
+
+.news span:nth-last-child(1) label {
+    color: #E90064;
+}
+
+.news p{
+    color: grey;
+}
