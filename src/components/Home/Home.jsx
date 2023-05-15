@@ -1,10 +1,18 @@
-
-import React from "react";
-import Home1 from "./Home1";
-
+import React from 'react'
+import Hero from "./hero/Hero"
+import AboutCard from '../about/AboutCard'
+import Hnews from './Hnews'
+import OnlineCourses from '../allcourses/OnlineCourses'
+import Team from '../team/TeamCard'
 const Home = () => {
- return (
-    <Home1/>
- )
+    return (
+        <>
+            <Hero />
+            
+            <OnlineCourses />
+        </>
+
+    )
 }
-export default Home;
+
+export default Home

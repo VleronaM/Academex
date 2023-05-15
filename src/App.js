@@ -3,13 +3,14 @@ import Header from './components/Common/Common/Header';
 import Footer from './components/Common/Common/Footer';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import React, { Component } from 'react';
-import Home from "./components/home/Home"
+import Home from "./components/Home/Home"
 import About from './components/about/About';
 import CourseHome from './components/allcourses/CourseHome';
 import Team from './components/team/Team';
 import News from './components/news/News';
 import Categories from './components/categories/Categories';
 import Books from './components/books/Books';
+import Contact from './components/contact/Contact';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/team" element={<Team />} />
           <Route path="/news" element={<News />} />
           <Route path="/books" element={<Books />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </Router>
     </>
