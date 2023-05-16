@@ -8,18 +8,18 @@ const Contact = () => {
         <>
            < Back title = 'Contact Us' />
            <section className = 'contact padding'>
-            <div className = "container shadow flexSB">
-             <div className="left row">
-             <iframe src = {map}></iframe>
+            <div className = "container shadoww flexSB">
+             <div className="left row ">
+             <iframe src = {map} className="map-container"></iframe>
              </div>
              <div className="right row">
                 <h1>Contact Us</h1>
                 <p> Ask us anything or just say hi...</p>
 
-                <div className="items grid2">
+                <div className="items grid22">
                     <div className="box">
-                        <h4>Address: </h4>
-                        <p>Prishtine, Kosove 10000</p>
+                        <h4>Location: </h4>
+                        <p>Prishtine,10000</p>
                     </div>
                     <div className="box">
                         <h4>Email: </h4>
@@ -38,8 +38,7 @@ const Contact = () => {
                         <input type = 'email' placeholder='Email'/>
                     </div>
                     <input type = 'text' placeholder = 'Subject' />
-                    <textarea cols='30' rows='10'>
-                    Create a message here...
+                    <textarea cols='30' rows='10' placeholder=" Create a message here...">
                     </textarea>
                     <button className="primary-btn">Send Message</button>
                 </form>

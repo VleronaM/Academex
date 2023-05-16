@@ -62,3 +62,14 @@
 .team .items:hover .overlay {
     opacity: 1;
 }
+
+.team .shadow:hover{
+    transform: scale(1.12);
+    
+}
+.team .shadow{
+    border-radius: 10px;
+}
+.team img{
+    border-radius: 10px 10px 0% 0%;
+}

@@ -12,6 +12,11 @@
     color: #E90064;
     
 }
+.grid22 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+  }
 .contact p{
     color: grey;
 }
@@ -36,6 +41,18 @@
 .contact .flexSB input:nth-child(1){
     margin-right: 10px;
 }
+
+.flexSB input{
+    border-radius: 10px;
+}
+
+.primary-btn{
+margin-top:10px !important;
+}
+
+.flexSB textarea{
+    border-radius: 10px;
+}
 .contact h3{
     margin-top: 20px;
     font-weight: 500;
@@ -47,6 +64,15 @@
     font-size: 15px;
     word-spacing: 5px;
 }
+
+.map-container{
+    border-radius: 40px;
+}
+.shadoww {
+    box-shadow: 0 5px 25px -2px rgba(0 0 0 /6%);
+    background-color: #fff;
+    border-radius: 40px;
+  }
 @media screen and (max-width: 768px) {
     .contact .container{
         flex-direction: column;
