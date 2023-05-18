@@ -1,3 +1,34 @@
+.coursesCard {
+    padding: 50px 0;
+}
+
+.coursesCard .items {
+    background-color: #fff;
+    padding: 30px;
+    text-align: center;
+}
+
+.coursesCard .img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #E90064;
+    padding: 15px;
+}
+
+.coursesCard img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 5px solid gray;
+}
+
+.outline-btn:hover {
+    background-color: #E90064;
+    color: #fff;
+
+}
+
 .online {
     text-align: center;
 }

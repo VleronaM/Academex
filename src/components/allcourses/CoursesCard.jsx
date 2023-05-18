@@ -1,6 +1,7 @@
 import React from 'react'
 import "./courses.css"
 import { coursesCard } from '../../database'
+
 const CoursesCard = () => {
     return (
         <>
