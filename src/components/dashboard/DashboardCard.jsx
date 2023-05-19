@@ -218,13 +218,14 @@ const DashboardCard = () => {
                             <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>name</th>
-                                    <th>surname</th>
-                                    <th>email</th>
-                                    <th>password</th>
-                                    <th>birthday</th>
-                                    <th>city</th>
-                                    <th>address</th>
+                                    <th>Name</th>
+                                    <th>Surname</th>
+                                    <th>Email</th>
+                                    <th>Password</th>
+                                    <th>Birthday</th>
+                                    <th>City</th>
+                                    <th>Address</th>
+                                    <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -303,13 +304,14 @@ const DashboardCard = () => {
                             <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>name</th>
-                                    <th>surname</th>
-                                    <th>email</th>
-                                    <th>password</th>
-                                    <th>birthday</th>
-                                    <th>city</th>
-                                    <th>address</th>
+                                    <th>Name</th>
+                                    <th>Surname</th>
+                                    <th>Email</th>
+                                    <th>Password</th>
+                                    <th>Birthday</th>
+                                    <th>City</th>
+                                    <th>Address</th>
+                                    <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -345,6 +347,102 @@ const DashboardCard = () => {
                                 </tr>
                             </tbody>
                         </table>
+                    </div>
+                </div>
+            </section>
+            <section className='about'>
+                <div className="container">
+                    <Title subtitle="Dashboard/About" />
+                    <div className="content">
+                        <h1>About</h1>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Cover image</th>
+                                    <th>Title</th>
+                                    <th>Text</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>AboutUs.jpg</td>
+                                    <td>Online Courses</td>
+                                    <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, aperiam. Exercitationem porro, culpa ipsam nihil vero illum repellat odio eum! 
+                                        Amet harum corrupti exercitationem? Saepe iste nemo quasi perferendis vero!</td>
+                                    <td>
+                                        <button >Delete</button>
+                                        <button>Edit</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+            <section className='News'>
+                <div className="container">
+                    <Title subtitle="Dashboard/News" />
+                    <div className="content">
+                        <h1>News</h1>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Cover Image</th>
+                                    <th>Date</th>
+                                    <th>Title</th>
+                                    <th>Article</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>News1.jpg</td>
+                                    <td>11-05-2022</td>
+                                    <td>Get to Know MyDev | Community Meetup</td>
+                                    <td>MyDev, is a Chicago-based company, is a platform determined to make it easy and affordable to dynamically create and host a website. 
+                                        Such a service saves time and doesn’t break the for small businesses just looking to startup in Kosovo Join us on Thursday, May 19, from 17:30 at ICK, to meet the team, learn about their services, products, opportunities and digital solutions, including: Claritask, Claritick, Irevu, Convosio, and Morsix</td>
+
+                                    <td>
+                                        <button >Delete</button>
+                                        <button>Edit</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h2>Add News</h2>
+                        <div className="add-inputs">
+                            <input
+                                type="text"
+                                name="id"
+                                placeholder="ID"
+
+                            />
+                            <input
+                                type="text"
+                                name="coverImage"
+                                placeholder="Cover Image URL"
+                            />
+                            <input 
+                            type='date'
+                            name='date'
+                            placeholder='Date'
+                            
+                            />
+                            <input
+                                type="text"
+                                name="title"
+                                placeholder="Title"
+                            />
+                            <textarea
+                                type="textarea"
+                            cols='30' rows='10' placeholder=" Create a new article here..."
+                           />
+                            <button>Add News</button>
+                        </div>
                     </div>
                 </div>
             </section>
