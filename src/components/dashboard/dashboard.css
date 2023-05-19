@@ -1,0 +1,44 @@
+table {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+table th,
+table td {
+    padding: 10px;
+    text-align: left;
+    background-color: white;
+}
+
+.actions button {
+    background-color: #e90064;
+    color: #ffffff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.add-inputs {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.add-inputs input {
+
+    margin-right: 10px;
+    height: 48px;
+    width: 185px;
+    border: 1px solid #e90064;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.add-inputs button {
+    background-color: #e90064;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    margin: 0px 10px 0px 0px;
+}
