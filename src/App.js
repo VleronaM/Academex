@@ -3,7 +3,7 @@ import Header from './components/Common/Common/Header';
 import Footer from './components/Common/Common/Footer';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import React, { Component } from 'react';
-import Home from "./components/home/Home"
+import Home from "./components/Home/Home"
 import About from './components/about/About';
 import CourseHome from './components/allcourses/CourseHome';
 import Team from './components/team/Team';

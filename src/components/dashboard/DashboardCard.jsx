@@ -213,8 +213,4 @@ const DashboardCard = () => {
     );
 };
 
-<<<<<<< HEAD
 export default DashboardCard;
-=======
-export default DashboardCard;
->>>>>>> 0af035fc147790197e92f12c2ee21e5052314488
