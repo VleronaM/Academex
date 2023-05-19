@@ -167,8 +167,8 @@ export const team = [
         work: "DEVELOPER AND LEAD INSTRUCTOR",
     },
     {
-        cover: "https://images.unsplash.com/photo-1563132337-f159f484226c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
-        name: "Ph.D Filan Fisteku",
+        cover: "../images/albini.jpg",
+        name: "Ph.D Albin Lahu",
         work: "DEVELOPER AND LEAD INSTRUCTOR",
     },
 

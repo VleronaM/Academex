@@ -176,7 +176,7 @@ const DashboardCard = () => {
                             </tbody>
                         </table>
 
-                        <h2>Add New Category</h2>
+                        <h2>Add New Course</h2>
                         <div className="add-inputs">
                             <input
                                 type="text"
@@ -206,6 +206,145 @@ const DashboardCard = () => {
                             />
                             <button>Add Course</button>
                         </div>
+                    </div>
+                </div>
+            </section>
+            <section className='teachers'>
+                <div className="container">
+                    <Title subtitle="Dashboard/Teachers" />
+                    <div className="content">
+                        <h1>Teachers</h1>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>name</th>
+                                    <th>surname</th>
+                                    <th>email</th>
+                                    <th>password</th>
+                                    <th>birthday</th>
+                                    <th>city</th>
+                                    <th>address</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Mark</td>
+                                    <td>Jones</td>
+                                    <td>markjones@gmail.com</td>
+                                    <td>***********</td>
+                                    <td>19-03-1989</td>
+                                    <td>Prishtine</td>
+                                    <td>Dardani</td>
+
+                                    <td>
+                                        <button >Delete</button>
+                                        <button>Edit</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h2>Add New Teacher</h2>
+                        <div className="add-inputs">
+                            <input
+                                type="text"
+                                name="id"
+                                placeholder="ID"
+
+                            />
+                            <input
+                                type="text"
+                                name="name"
+                                placeholder="Name.."
+                            />
+                            <input
+                                type="text"
+                                name="surname"
+                                placeholder="Surname.."
+                            />
+                            <input
+                                type="text"
+                                name="email"
+                                placeholder="Email.."
+                            />
+                            <input
+                                type="text"
+                                name="password"
+                                placeholder="Password.."
+                            />
+                             <input
+                                type="date"
+                                name="birthday"
+                                placeholder="Birthday.."
+                            />
+                             <input
+                                type="text"
+                                name="city"
+                                placeholder="City.."
+                            />
+                            <input
+                                type="text"
+                                name="address"
+                                placeholder="Address.."
+                            />
+                            <button>Add Teachers</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section className='students'>
+                <div className="container">
+                    <Title subtitle="Dashboard/Students" />
+                    <div className="content">
+                        <h1>Students</h1>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>name</th>
+                                    <th>surname</th>
+                                    <th>email</th>
+                                    <th>password</th>
+                                    <th>birthday</th>
+                                    <th>city</th>
+                                    <th>address</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Isabella</td>
+                                    <td>Mitchel</td>
+                                    <td>isabellamitchel@gmail.com</td>
+                                    <td>***********</td>
+                                    <td>17-09-2000</td>
+                                    <td>Prishtine</td>
+                                    <td>Ulpiane</td>
+
+                                    <td>
+                                        <button >Delete</button>
+                                        <button>Edit</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Sophia</td>
+                                    <td>Anderson</td>
+                                    <td>sophiaanderson@gmail.com</td>
+                                    <td>***********</td>
+                                    <td>02-11-2003</td>
+                                    <td>Prizren</td>
+                                    <td>rruga 21</td>
+
+                                    <td>
+                                        <button >Delete</button>
+                                        <button>Edit</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </section>
