@@ -275,12 +275,12 @@ const DashboardCard = () => {
                                 name="password"
                                 placeholder="Password.."
                             />
-                             <input
+                            <input
                                 type="date"
                                 name="birthday"
                                 placeholder="Birthday.."
                             />
-                             <input
+                            <input
                                 type="text"
                                 name="city"
                                 placeholder="City.."
@@ -368,7 +368,7 @@ const DashboardCard = () => {
                                 <tr>
                                     <td>AboutUs.jpg</td>
                                     <td>Online Courses</td>
-                                    <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, aperiam. Exercitationem porro, culpa ipsam nihil vero illum repellat odio eum! 
+                                    <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, aperiam. Exercitationem porro, culpa ipsam nihil vero illum repellat odio eum!
                                         Amet harum corrupti exercitationem? Saepe iste nemo quasi perferendis vero!</td>
                                     <td>
                                         <button >Delete</button>
@@ -402,7 +402,7 @@ const DashboardCard = () => {
                                     <td>News1.jpg</td>
                                     <td>11-05-2022</td>
                                     <td>Get to Know MyDev | Community Meetup</td>
-                                    <td>MyDev, is a Chicago-based company, is a platform determined to make it easy and affordable to dynamically create and host a website. 
+                                    <td>MyDev, is a Chicago-based company, is a platform determined to make it easy and affordable to dynamically create and host a website.
                                         Such a service saves time and doesn’t break the for small businesses just looking to startup in Kosovo Join us on Thursday, May 19, from 17:30 at ICK, to meet the team, learn about their services, products, opportunities and digital solutions, including: Claritask, Claritick, Irevu, Convosio, and Morsix</td>
 
                                     <td>
@@ -426,11 +426,11 @@ const DashboardCard = () => {
                                 name="coverImage"
                                 placeholder="Cover Image URL"
                             />
-                            <input 
-                            type='date'
-                            name='date'
-                            placeholder='Date'
-                            
+                            <input
+                                type='date'
+                                name='date'
+                                placeholder='Date'
+
                             />
                             <input
                                 type="text"
@@ -438,9 +438,9 @@ const DashboardCard = () => {
                                 placeholder="Title"
                             />
                             <textarea
-                                type="textarea"
-                            cols='30' rows='10' placeholder=" Create a new article here..."
-                           />
+                                type="textarea" id='news-text'
+                                cols='30' rows='10' placeholder=" Create a new article here..."
+                            />
                             <button>Add News</button>
                         </div>
                     </div>

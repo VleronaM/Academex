@@ -1,71 +1,77 @@
 .dashboard {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  
-  .container {
-    width: 100%;
-    margin-bottom: 30px;
-  }
-  
-  .container h1 {
-    margin-bottom: 10px;
-  }
-  
-  .container table {
-    width: 100%;
-  }
-  
-  .container th,
-  .container td {
-    padding: 10px;
-    text-align: left;
-    background-color: white;
-  }
-  
-  .container .actions button {
-    background-color: #e90064;
-    color: #ffffff;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-    margin-right: 5px;
-  }
-  
-  .container .add-inputs {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 10px;
-  }
-  
-  .container .add-inputs input {
-    margin-right: 10px;
-    margin-bottom: 10px;
-    height: 48px;
-    width: 185px;
-    border: 1px solid #e90064;
-    border-radius: 6px;
-    text-align: center;
-  }
-  
-  .container .add-inputs button {
-    background-color: #e90064;
-    color: #ffffff;
-    border: none;
-    cursor: pointer;
-    margin: 0px 10px 0px 0px;
-  }
-  .container h2{
-    margin: 20px;
-  }
-  .container .add-inputs textarea{
-    margin-right: 10px;
-    margin-bottom: 10px;
-    height: 48px;
-    width: 185px;
-    border: 1px solid #e90064;
-    border-radius: 6px;
-    text-align: center;
-  }
-  
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.container {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.container h1 {
+  margin-bottom: 10px;
+}
+
+.container table {
+  width: 100%;
+}
+
+.container th,
+.container td {
+  padding: 10px;
+  text-align: left;
+  background-color: white;
+}
+
+.container .actions button {
+  background-color: #e90064;
+  color: #ffffff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.container .add-inputs {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.container .add-inputs input {
+  margin-right: 10px;
+  margin-bottom: 10px;
+  height: 48px;
+  width: 185px;
+  border: 1px solid #e90064;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.container .add-inputs button {
+  background-color: #e90064;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  margin: 0px 10px 0px 0px;
+}
+
+.container h2 {
+  margin: 20px;
+}
+
+.container .add-inputs textarea {
+  margin-right: 10px;
+  margin-bottom: 10px;
+  height: 48px;
+  width: 185px;
+  border: 1px solid #e90064;
+  border-radius: 6px;
+  text-align: center;
+}
+
+#news-text {
+  width: 100%;
+  height: 40%;
+}
