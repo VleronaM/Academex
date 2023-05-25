@@ -8,7 +8,7 @@ const BooksCard = () => {
         < >
             <section className='books'>
                 <div className='container'>
-                    <Title  title='Download Your Favorite Books for Free!' />
+                    <Title title='Download Your Favorite Books for Free!' />
                     <div className='content grid3'>
                         {books.map((val) => (
                             <div className="box">
@@ -17,6 +17,9 @@ const BooksCard = () => {
                                 </div>
                                 <h1>{val.name}</h1>
                                 <span>{val.author}</span>
+                                <div>
+                                    <button className='downloads'>Download now<i class="fa fa-download" aria-hidden="true"></i></button>
+                                </div>
                             </div>
                         ))}
                     </div>
