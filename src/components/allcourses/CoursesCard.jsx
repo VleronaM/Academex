@@ -1,45 +1,29 @@
-import React from 'react'
-import "./courses.css"
-import { coursesCard } from '../../database'
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 const CoursesCard = () => {
-    return (
-        <>
-            <section className='coursesCard'>
-                <div className='container grid2'>
-                    {coursesCard.map((val) => (
-                        <div className='items'>
-                            <div className='content flex'>
-                                <div className='left'>
+  const [coursesData, setCoursesData] = useState([]);
 
-                                </div>
-                                <div className='text'>
-                                    <h1>{val.coursesName}</h1>
+  useEffect(() => {
+    axios.get('http://localhost:3030/courses')
+      .then((response) => {
+        setCoursesData(response.data);
+      })
+      .catch((error) => {
+        console.error('Error fetching data:', error);
+      });
+  }, []);
 
-                                    <div className='details'>
-                                        {val.courTeacher.map((details) => (
-                                            <>
-                                                <div className='box'>
-                                                    <div className='dimg'>
-                                                        <img src={val.cover} alt='' />
-                                                    </div>
-                                                    <div className='para'>
-                                                        <h4>{details.name}</h4>
-                                                    </div>
-                                                </div>
-                                                <span>{details.totalTime}</span>
-                                            </>
-                                        ))}
-                                    </div>
-                                </div>
-                            </div>
-                            <button className='outline-btn'>ENROLL NOW !</button>
-                        </div>
-                    ))}
-                </div>
-            </section>
-        </>
-    )
-}
+  return (
+    <div>
+      {coursesData.map(course => (
+        <div key={course.id}>
+          <h2>{course.title}</h2>
+          <p>{course.description}</p>
+        </div>
+      ))}
+    </div>
+  );
+};
 
-export default CoursesCard
+export default CoursesCard;

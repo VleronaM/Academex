@@ -47,8 +47,12 @@ header ul li a:hover {
 .start {
   background-color: #E90064;
   padding: 30px 70px;
-  color: #fff;
+  color: white;
   clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%);
+}
+.start .get-started-link {
+  color: white;
+  text-decoration: none;
 }
 
 .toggle {

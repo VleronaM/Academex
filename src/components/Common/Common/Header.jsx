@@ -3,6 +3,7 @@ import Head from "./Head";
 import "./style/header.css";
 import { Link } from "react-router-dom";
 
+
 const Header = () => {
   const [click, setClick] = useState(false)
   return (
@@ -40,7 +41,9 @@ const Header = () => {
             </li>
           </ul>
           <div className="start">
-            <div className="button"> Get Certificate</div>
+            <Link to='/login'>
+              <div className="get-started-link">Get Started!</div>
+            </Link>
           </div>
           <button className='toggle' onClick={() => setClick(!click)}>
             {click ? <i className='fa fa-times' ></i> : <i className='fa fa-bars'></i>}
@@ -51,28 +54,3 @@ const Header = () => {
   )
 }
 export default Header;
-
-/*import './style/header.css';
-const Header = () => {
-  
-     return (
-        <div>
-          <section className = 'head'>
-        <div className='container'>
-          <div className = 'logo'>
-        <h1>ACADEMEX</h1>  
-        <span>E-Learning</span>
-           </div>
-     <div className = 'social'>
-          <i className= 'fab fa-facebook-f'></i>
-          <i className= 'fab fa-instagram icon'></i>
-          <i className= 'fab fa-youtube icon'></i>
-          <i className= 'fab fa-twitter icon'></i>
-     </div>
-
-        </div>
-        </section> 
-        </div>
-     )
-  
-}*/
