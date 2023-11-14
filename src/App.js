@@ -1,15 +1,10 @@
 import './App.css';
 import Header from './components/Common/Common/Header';
 import Footer from './components/Common/Common/Footer';
-<<<<<<< Updated upstream
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import React, { Component } from 'react';
-=======
 import Head from './components/Common/Common/Head';
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 import Axios from "axios";
->>>>>>> Stashed changes
 import Home from "./components/home/Home";
 import About from './components/about/About';
 import CourseHome from './components/allcourses/CourseHome';
