@@ -1,33 +1,40 @@
-import React from 'react'
-import Title from '../Common/title/Title'
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import "./categories.css"
-import { categories } from '../../database'
 
 const CategoriesCard = () => {
+    const [categoriesData, setCategoriesData] = useState([]);
+
+    useEffect(() => {
+        axios.get('http://localhost:3030/categories')
+            .then((response) => {
+                setCategoriesData(response.data);
+            })
+            .catch((error) => {
+                console.error('Error fetching data:', error);
+            });
+    }, []);
+
     return (
-        < >
-            <section className='online'>
+        <>
+            <section className='categories-card'>
                 <div className='container'>
-                    <Title subtitle="Categories" title='Browse our categories' />
-
-                    <div className='content grid3'>
-                        {categories.map((val) => (
-                            <div className="box">
-                                <div className="img">
-                                    <img src={val.cover} alt="" />
-                                </div>
-                                <h1>{val.courseName}</h1>
-                                <span>{val.course}</span>
+                    {categoriesData.map(category => (
+                        <div key={category.id} className='category-item'>
+                            {console.log(`${process.env.PUBLIC_URL}/images/${category.cover}`)}
+                            <div className='category-image'>
+                                <img src={`${process.env.PUBLIC_URL}/images/${category.cover}`} alt={category.title} />
                             </div>
-
-                        )
-
-                        )}
-                    </div>
+                            <div className='category-content'>
+                                <h2>{category.title}</h2>
+                                <button className='outline-btn'>Browse now!</button>
+                            </div>
+                        </div>
+                    ))}
                 </div>
             </section>
-        </ >
+        </>
     )
 }
 
-export default CategoriesCard
+export default CategoriesCard;

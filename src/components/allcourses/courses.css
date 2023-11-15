@@ -1,81 +1,51 @@
-.coursesCard {
-    padding: 50px 0;
+/* Add styles for the Back component */
+.back-container {
+    margin-bottom: 20px; /* Adjust the bottom margin */
 }
 
-.coursesCard .items {
+/* Adjust the margin for the course card section */
+.courses-card {
+    padding: 20px 0; /* Reduce top and bottom padding */
+    margin-top: 10px; /* Add a top margin to reduce space */
+}
+
+.container.grid2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.course-item {
     background-color: #fff;
-    padding: 30px;
+    padding: 20px; /* Reduce padding */
     text-align: center;
 }
 
-.coursesCard .img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    background-color: #E90064;
-    padding: 15px;
-}
-
-.coursesCard img {
+.course-image {
     width: 100%;
-    height: 100%;
+    height: 200px;
     object-fit: cover;
-    border: 5px solid gray;
+    border-radius: 8px;
+    margin-bottom: 10px;
 }
 
-.outline-btn:hover {
-    background-color: #E90064;
-    color: #fff;
-
+.course-item h2 {
+    font-size: 20px;
+    margin-bottom: 8px;
 }
 
-/* kategorite -------------------------------------------------- */
+.course-item p {
+    font-size: 14px;
+    color: #555;
+}
+
 .online {
     text-align: center;
 }
 
 .online .box {
-    box-shadow: 0 5px 25px -2px rbga(0 0 0 /6%);
+    box-shadow: 0 5px 25px -2px rgba(0, 0, 0, 0.6);
     background-color: #fff;
-    padding: 30px 20px;
+    padding: 20px;
     transition: 0.5s;
-}
-
-.online .img {
-    width: 80px;
-    height: 80px;
-    margin: auto;
-    position: relative;
-
-}
-
-.online img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 15px;
-}
-
-.online h1 {
-    font-size: 20px;
-    margin: 20px 0;
-    line-height: 27px;
-    font-weight: 500;
-}
-
-.online span {
-    background-color: #f8f8f8;
-    padding: 5px 20px;
-    font-weight: 500;
-    font-size: 20px;
-    color: #E90064;
-    border-radius: 5px;
-}
-
-.online .box .show {
-    opacity: 0;
-}
-
-.online .box:hover {
-    background-color: #E90064;
 }

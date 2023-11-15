@@ -19,14 +19,14 @@ import LoginApp from './components/login/loginApp';
 const App = () => {
   const [data, setData] = useState("");
 
-  const getData = async () => {
-    const response = await Axios.get("http://localhost:3030/allData"); // Make an API request to your Express server
-    setData(response.data);
-  }
+  // const getData = async () => {
+  //   const response = await Axios.get("http://localhost:3030/allData"); // Make an API request to your Express server
+  //   setData(response.data);
+  // }
 
-  useEffect(() => {
-    getData();
-  }, []);
+  // useEffect(() => {
+  //   getData();
+  // }, []);
 
   return (
     <>

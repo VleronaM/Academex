@@ -1,453 +1,199 @@
-import React, { useState } from 'react'
-import "./dashboard.css"
-import Title from '../Common/title/Title';
+import React, { useState, useEffect, useRef } from "react";
+import axios from "axios";
+import "./dashboard.css";
+import Title from "../Common/title/Title";
 
 const DashboardCard = () => {
-    const [books, setBooks] = useState([
-        { id: 1, isbn: '123456789', coverImage: 'java1.jpg', title: 'Java Programming', author: 'Filan Fisteku' },
-        { id: 2, isbn: '987654321', coverImage: 'python1.jpg', title: 'Python Programming', author: 'Filan Fisteku2' },
-    ]);
+  const [data, setData] = useState({
+    courses: [],
+    students: [],
+    teachers: [],
+    categories: [],
+    // Add other data as needed
+  });
 
-    const [newBook, setNewBook] = useState({ isbn: '', coverImage: '', title: '', author: '' });
+  useEffect(() => {
+    axios
+      .get("http://localhost:3030/allData")
+      .then((response) => {
+        console.log("Data fetched successfully:", response.data);
+        setData(response.data);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
+  }, []);
 
-    const handleInputChange = (e) => {
-        const { name, value } = e.target;
-        setNewBook({ ...newBook, [name]: value });
-    };
+  const { courses, students, teachers, categories } = data;
 
-    const addBook = () => {
-        setBooks([...books, { id: books.length + 1, ...newBook }]);
-        setNewBook({ isbn: '', coverImage: '', title: '', author: '' });
-    };
+  const deleteItem = async (type, id) => {
+    try {
+      // Send a DELETE request to the backend API to delete the item
+      await axios.delete(`http://localhost:3030/${type}/delete/${id}`);
 
-    const deleteBook = (id) => {
-        setBooks(books.filter((book) => book.id !== id));
-    };
+      // Update the local state to reflect the deleted item
+      setData((prevData) => {
+        const updatedData = { ...prevData };
+        updatedData[type] = prevData[type].filter((item) => item.id !== id);
+        return updatedData;
+      });
+
+      console.log(`${type} with ID ${id} deleted successfully`);
+    } catch (error) {
+      console.error(`Error deleting ${type} with ID ${id}:`, error);
+    }
+  };
+
+  // const editItem = async (type, id, updatedData) => {
+  //     try {
+  //         // Send a PATCH request to the backend API to edit the item
+  //         await axios.patch(`http://localhost:3030/${type}/update/${id}`, updatedData);
+
+  //         // Update the local state to reflect the edited item
+  //         setData((prevData) => {
+  //             const updatedData = { ...prevData };
+  //             const index = updatedData[type].findIndex((item) => item.id === id);
+  //             updatedData[type][index] = { ...updatedData[type][index], ...updatedData };
+  //             return updatedData;
+  //         });
+
+  //         console.log(`${type} with ID ${id} edited successfully`);
+  //     } catch (error) {
+  //         console.error(`Error editing ${type} with ID ${id}:`, error);
+  //     }
+  // };
+
+  const ref = useRef(null);
+  const [item, setItem] = useState({ title: "", description: "", image: "" });
+
+  const editItem = (data) => {
+    ref.current.click();
+    // setItem({etitle: currentItem.title, edescription: currentItem.description, eimage: currentItem.image})
+  };
+
+  const handleClick = (e) => {
+    console.log("Updating the item...", item);
+    e.preventDefault();
+  };
+  const onChange = (e) => {
+    setItem({ ...item, [e.target.name]: e.target.value });
+  };
+
+  const addItem = async (type, newItem) => {
+    try {
+      // Send a POST request to the backend API to add a new item
+      const response = await axios.post(
+        `http://localhost:3030/${type}/create`,
+        newItem
+      );
+
+      // Update the local state to include the newly added item
+      setData((prevData) => {
+        const updatedData = { ...prevData };
+        updatedData[type] = [...prevData[type], response.data];
+        return updatedData;
+      });
+
+      console.log(`${type} added successfully`);
+    } catch (error) {
+      console.error(`Error adding ${type}:`, error);
+    }
+  };
+
+  const renderTable = (type, items) => {
+    // Check if items is defined and not null
+    if (!items || items.length === 0) {
+      return (
+        <div className="content">
+          <h1>{type.charAt(0).toUpperCase() + type.slice(1)}</h1>
+          <p>No {type}s available</p>
+
+          <h2>Add New {type.charAt(0).toUpperCase() + type.slice(1)}</h2>
+          <div className="add-inputs">
+            {/* Add input fields and button for adding a new item */}
+            <button
+              onClick={() =>
+                addItem(type, {
+                  /* add new item data here */
+                })
+              }
+            >
+              Add {type.charAt(0).toUpperCase() + type.slice(1)}
+            </button>
+          </div>
+        </div>
+      );
+    }
 
     return (
-        <>
-            <section className='librat'>
-                <div className="container">
-                    <Title subtitle="Dashboard/Books" />
-                    <div className="content">
-                        <h1>Books</h1>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>ISBN</th>
-                                    <th>Cover Image</th>
-                                    <th>Title</th>
-                                    <th>Author</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {books.map((book) => (
-                                    <tr key={book.id}>
-                                        <td>{book.isbn}</td>
-                                        <td>{book.coverImage}</td>
-                                        <td>{book.title}</td>
-                                        <td>{book.author}</td>
-                                        <td>
-                                            <button onClick={() => deleteBook(book.id)}>Delete</button>
-                                            <button>Edit</button>
-                                        </td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
+      <div className="content">
+        <h1>{type.charAt(0).toUpperCase() + type.slice(1)}</h1>
+        <table>
+          <thead>
+            <tr>
+              {Object.keys(items[0]).map((key) => (
+                <th key={key}>{key}</th>
+              ))}
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {items.map((item) => (
+              <tr key={item.id}>
+                {Object.values(item).map((value, index) => (
+                  <td key={index}>{value}</td>
+                ))}
+                <td>
+                  <button onClick={() => deleteItem(type, item.id)}>
+                    Delete
+                  </button>
+                  <button ref={ref} onClick={() => editItem(type, item.id)}>
+                    Edit
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
 
-                        <h2>Add New Book</h2>
-                        <div className="add-inputs">
-                            <input
-                                type="text"
-                                name="isbn"
-                                placeholder="ISBN"
-                                value={newBook.isbn}
-                                onChange={handleInputChange}
-                            />
-                            <input
-                                type="text"
-                                name="coverImage"
-                                placeholder="Cover Image URL"
-                                value={newBook.coverImage}
-                                onChange={handleInputChange}
-                            />
-                            <input
-                                type="text"
-                                name="title"
-                                placeholder="Title"
-                                value={newBook.title}
-                                onChange={handleInputChange}
-                            />
-                            <input
-                                type="text"
-                                name="author"
-                                placeholder="Author"
-                                value={newBook.author}
-                                onChange={handleInputChange}
-                            />
-                            <button onClick={addBook}>Add Book</button>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section className='categories'>
-                <div className="container">
-                    <Title subtitle="Dashboard/Categories" />
-                    <div className="content">
-                        <h1>Categories</h1>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Cover Image</th>
-                                    <th>Title</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>programming.jpg</td>
-                                    <td>Programming</td>
-
-                                    <td>
-                                        <button >Delete</button>
-                                        <button>Edit</button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-
-                        <h2>Add New Category</h2>
-                        <div className="add-inputs">
-                            <input
-                                type="text"
-                                name="id"
-                                placeholder="ID"
-
-                            />
-                            <input
-                                type="text"
-                                name="coverImage"
-                                placeholder="Cover Image URL"
-                            />
-                            <input
-                                type="text"
-                                name="title"
-                                placeholder="Title"
-
-                            />
-                            <button>Add Category</button>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section className='courses'>
-                <div className="container">
-                    <Title subtitle="Dashboard/Courses" />
-                    <div className="content">
-                        <h1>Courses</h1>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Cover Image</th>
-                                    <th>Title</th>
-                                    <th>Teacher</th>
-                                    <th>Category</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>java.jpg</td>
-                                    <td>Java Programming</td>
-                                    <td>Filan Fisteku</td>
-                                    <td>Programming</td>
-
-                                    <td>
-                                        <button >Delete</button>
-                                        <button>Edit</button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-
-                        <h2>Add New Course</h2>
-                        <div className="add-inputs">
-                            <input
-                                type="text"
-                                name="id"
-                                placeholder="ID"
-
-                            />
-                            <input
-                                type="text"
-                                name="coverImage"
-                                placeholder="Cover Image URL"
-                            />
-                            <input
-                                type="text"
-                                name="title"
-                                placeholder="Title"
-                            />
-                            <input
-                                type="text"
-                                name="teacher"
-                                placeholder="Teacher"
-                            />
-                            <input
-                                type="text"
-                                name="category"
-                                placeholder="Category"
-                            />
-                            <button>Add Course</button>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section className='teachers'>
-                <div className="container">
-                    <Title subtitle="Dashboard/Teachers" />
-                    <div className="content">
-                        <h1>Teachers</h1>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Name</th>
-                                    <th>Surname</th>
-                                    <th>Email</th>
-                                    <th>Password</th>
-                                    <th>Birthday</th>
-                                    <th>City</th>
-                                    <th>Address</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Mark</td>
-                                    <td>Jones</td>
-                                    <td>markjones@gmail.com</td>
-                                    <td>***********</td>
-                                    <td>19-03-1989</td>
-                                    <td>Prishtine</td>
-                                    <td>Dardani</td>
-
-                                    <td>
-                                        <button >Delete</button>
-                                        <button>Edit</button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-
-                        <h2>Add New Teacher</h2>
-                        <div className="add-inputs">
-                            <input
-                                type="text"
-                                name="id"
-                                placeholder="ID"
-
-                            />
-                            <input
-                                type="text"
-                                name="name"
-                                placeholder="Name.."
-                            />
-                            <input
-                                type="text"
-                                name="surname"
-                                placeholder="Surname.."
-                            />
-                            <input
-                                type="text"
-                                name="email"
-                                placeholder="Email.."
-                            />
-                            <input
-                                type="text"
-                                name="password"
-                                placeholder="Password.."
-                            />
-                            <input
-                                type="date"
-                                name="birthday"
-                                placeholder="Birthday.."
-                            />
-                            <input
-                                type="text"
-                                name="city"
-                                placeholder="City.."
-                            />
-                            <input
-                                type="text"
-                                name="address"
-                                placeholder="Address.."
-                            />
-                            <button>Add Teachers</button>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section className='students'>
-                <div className="container">
-                    <Title subtitle="Dashboard/Students" />
-                    <div className="content">
-                        <h1>Students</h1>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Name</th>
-                                    <th>Surname</th>
-                                    <th>Email</th>
-                                    <th>Password</th>
-                                    <th>Birthday</th>
-                                    <th>City</th>
-                                    <th>Address</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Isabella</td>
-                                    <td>Mitchel</td>
-                                    <td>isabellamitchel@gmail.com</td>
-                                    <td>***********</td>
-                                    <td>17-09-2000</td>
-                                    <td>Prishtine</td>
-                                    <td>Ulpiane</td>
-
-                                    <td>
-                                        <button >Delete</button>
-                                        <button>Edit</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Sophia</td>
-                                    <td>Anderson</td>
-                                    <td>sophiaanderson@gmail.com</td>
-                                    <td>***********</td>
-                                    <td>02-11-2003</td>
-                                    <td>Prizren</td>
-                                    <td>rruga 21</td>
-
-                                    <td>
-                                        <button >Delete</button>
-                                        <button>Edit</button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </section>
-            <section className='about'>
-                <div className="container">
-                    <Title subtitle="Dashboard/About" />
-                    <div className="content">
-                        <h1>About</h1>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Cover image</th>
-                                    <th>Title</th>
-                                    <th>Text</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>AboutUs.jpg</td>
-                                    <td>Online Courses</td>
-                                    <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, aperiam. Exercitationem porro, culpa ipsam nihil vero illum repellat odio eum!
-                                        Amet harum corrupti exercitationem? Saepe iste nemo quasi perferendis vero!</td>
-                                    <td>
-                                        <button >Delete</button>
-                                        <button>Edit</button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </section>
-            <section className='News'>
-                <div className="container">
-                    <Title subtitle="Dashboard/News" />
-                    <div className="content">
-                        <h1>News</h1>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Cover Image</th>
-                                    <th>Date</th>
-                                    <th>Title</th>
-                                    <th>Article</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>News1.jpg</td>
-                                    <td>11-05-2022</td>
-                                    <td>Get to Know MyDev | Community Meetup</td>
-                                    <td>MyDev, is a Chicago-based company, is a platform determined to make it easy and affordable to dynamically create and host a website.
-                                        Such a service saves time and doesn’t break the for small businesses just looking to startup in Kosovo Join us on Thursday, May 19, from 17:30 at ICK, to meet the team, learn about their services, products, opportunities and digital solutions, including: Claritask, Claritick, Irevu, Convosio, and Morsix</td>
-
-                                    <td>
-                                        <button >Delete</button>
-                                        <button>Edit</button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-
-                        <h2>Add News</h2>
-                        <div className="add-inputs">
-                            <input
-                                type="text"
-                                name="id"
-                                placeholder="ID"
-
-                            />
-                            <input
-                                type="text"
-                                name="coverImage"
-                                placeholder="Cover Image URL"
-                            />
-                            <input
-                                type='date'
-                                name='date'
-                                placeholder='Date'
-
-                            />
-                            <input
-                                type="text"
-                                name="title"
-                                placeholder="Title"
-                            />
-                            <textarea
-                                type="textarea" id='news-text'
-                                cols='30' rows='10' placeholder=" Create a new article here..."
-                            />
-                            <button>Add News</button>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </>
+        <h2>Add New {type.charAt(0).toUpperCase() + type.slice(1)}</h2>
+        <div className="add-inputs">
+          {/* Add input fields and button for adding a new item */}
+          <button
+            onClick={() =>
+              addItem(type, {
+                /* add new item data here */
+              })
+            }
+          >
+            Add {type.charAt(0).toUpperCase() + type.slice(1)}
+          </button>
+        </div>
+      </div>
     );
+  };
+
+  return (
+    <>
+      <section className="librat">
+        <div className="container">{renderTable("courses", courses)}</div>
+      </section>
+
+      <section className="categories">
+        <div className="container">{renderTable("categories", categories)}</div>
+      </section>
+
+      <section className="teachers">
+        <div className="container">{renderTable("teachers", teachers)}</div>
+      </section>
+
+      <section className="students">
+        <div className="container">{renderTable("students", students)}</div>
+      </section>
+
+      {/* Add sections for other types as needed */}
+    </>
+  );
 };
 
 export default DashboardCard;
