@@ -6,6 +6,9 @@ import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-route
 import React, { useEffect, useState } from 'react';
 import Axios from "axios";
 import Home from "./components/home/Home";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import React, { Component } from 'react';
+import Home from "./components/home/Home";
 import About from './components/about/About';
 import CourseHome from './components/allcourses/CourseHome';
 import Team from './components/team/Team';

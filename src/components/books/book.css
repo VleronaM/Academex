@@ -5,7 +5,7 @@
 .books .box {
     box-shadow: 0 5px 25px -2px rbga(0 0 0 /6%);
     background-color: #fff;
-    padding: 30px 20px;
+    padding: 30px 0px;
     transition: 0.5s;
 }
 
@@ -32,14 +32,20 @@
 }
 
 .books span {
+    border-radius: 3px;
     background-color: #f8f8f8;
     padding: 5px 20px;
     font-weight: 300;
     font-size: 13px;
     color: #E90064;
-    border-radius: 1px;
 }
 
 .books .box:hover {
     background-color: #E90064;
+}
+
+
+.download {
+    height: 10px;
+    width: 30px;
 }
