@@ -11,6 +11,11 @@ const NewsCard = () => {
             .catch(error => console.error('Error fetching news:', error));
     }, []);
 
+    const formatDate = (dateString) => {
+        const options = { year: 'numeric', month: 'numeric', day: 'numeric' };
+        return new Date(dateString).toLocaleDateString(undefined, options);
+    };
+
     return (
         <div className="news-container">
             {news.map((val, index) => (
@@ -22,11 +27,12 @@ const NewsCard = () => {
                         <div className="admin flexSB">
                             <span>
                                 <i className="fa fa-calendar-alt"></i>
-                                <label htmlFor="">{val.createdAt}</label>
+                                <label htmlFor="">{formatDate(val.createdAt)}</label>
                             </span>
                         </div>
                         <h1>{val.title}</h1>
                         <p>{val.content}</p>
+                        <a href="#" className="read-more">Read More</a> 
                     </div>
                 </div>
             ))}

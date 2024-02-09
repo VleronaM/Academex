@@ -54,4 +54,24 @@
 
 .news-card p {
     color: grey;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4; 
+    -webkit-box-orient: vertical;
 }
+.news-card .read-more {
+    color: #E90064;
+    text-decoration: none;
+    font-weight: bold;
+    transition: font-size 0.5s; 
+    font-size: 16px;
+}
+
+.news-card .read-more:hover {
+    font-size: 18px; 
+}
+.fa-calendar-alt{
+    margin-right: 5px;
+}
+
