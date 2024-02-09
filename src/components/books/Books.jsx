@@ -5,7 +5,7 @@ import "./book.css"
 const Books = () => {
     return (
         < >
-            <Back title='Explore eBooks' />
+            <Back title='Explore our Books' />
             <BooksCard />
         </ >
     )
