@@ -96,3 +96,87 @@
     background-color: #E90064;
     color: #fff;
 }
+
+/* -------------Categories---------- */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+.categories {
+  padding: 3vw 5vw;
+  font-family: "Roboto", sans-serif;
+}
+
+.categories h2,
+.categories .categories-h2 {
+  color: #272727;
+  margin-bottom: 1em;
+}
+
+.categories-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.categories-container .search-item,
+.categories-container .show-all-button {
+  cursor: pointer;
+  background-color: #f9f9f9;
+  color: #272727;
+  font-weight: 350;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 2px;
+  padding: 0.5em;
+  margin: 0 1em 1em 0;
+  border-radius: 5px;
+  box-shadow: 0 3px 6px #d1d3d6;
+  transition: all 0.3s ease;
+}
+
+.categories-container .search-item:hover,
+.categories-container .show-all-button:hover {
+  background-color: #E90064;
+  color: #fff;
+  transform: scale(1.1);
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 35px;
+}
+
+.search-box input {
+  width: 250px;
+  height: 35px;
+  padding: 0 0.5em;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  border: 1px solid #d4d8dd;
+  font-weight: 400;
+  line-height: 26px;
+  letter-spacing: 2.8px;
+}
+
+.search-box .button {
+  padding: 0;
+  border-radius: 0 5px 5px 0;
+  border: none;
+  outline: none;
+  width: 60px;
+  height: 35px;
+  background-color: #e9ebee;
+  color: #000;
+  margin-bottom: 2.7%;
+}
+
+.search-box .button:hover {
+  background-color: #E90064;
+  color: #fff;
+}
+
+.search-item.selected {
+    background-color: #ef4c92;
+    color: #fff;
+    border-color: #ef4c92;
+  }

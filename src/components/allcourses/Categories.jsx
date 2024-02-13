@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import './categories.css';
+import './courses.css';
 
 export default function Categories({ categories, onSelectCategory, onSearch, selectedCategory }) {
   const [searchQuery, setSearchQuery] = useState("");
