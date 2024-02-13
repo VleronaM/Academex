@@ -1,45 +1,99 @@
-import React from 'react'
-import "./courses.css"
-import { coursesCard } from '../../database'
+import React, { useState, useEffect } from "react";
+import "./courses.css";
+import axios from "axios";
+import Categories from "./Categories";
 
 const CoursesCard = () => {
-    return (
-        <>
-            <section className='coursesCard'>
-                <div className='container grid2'>
-                    {coursesCard.map((val) => (
-                        <div className='items'>
-                            <div className='content flex'>
-                                <div className='left'>
+  const [coursesCard, setCoursesCard] = useState([]);
+  const [categories, setCategories] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState("");
+  const [searchQuery, setSearchQuery] = useState("");
+  const [filteredCourses, setFilteredCourses] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage] = useState(8); 
 
-                                </div>
-                                <div className='text'>
-                                    <h1>{val.coursesName}</h1>
+  useEffect(() => {
+    fetchData();
+  }, []);
 
-                                    <div className='details'>
-                                        {val.courTeacher.map((details) => (
-                                            <>
-                                                <div className='box'>
-                                                    <div className='dimg'>
-                                                        <img src={val.cover} alt='' />
-                                                    </div>
-                                                    <div className='para'>
-                                                        <h4>{details.name}</h4>
-                                                    </div>
-                                                </div>
-                                                <span>{details.totalTime}</span>
-                                            </>
-                                        ))}
-                                    </div>
-                                </div>
-                            </div>
-                            <button className='outline-btn'>ENROLL NOW !</button>
-                        </div>
-                    ))}
-                </div>
-            </section>
-        </>
-    )
-}
+  const fetchData = async () => {
+    try {
+      const coursesResponse = await axios.get("http://localhost:3030/courses");
+      setCoursesCard(coursesResponse.data);
 
-export default CoursesCard
+      const categoriesResponse = await axios.get(
+        "http://localhost:3030/categories"
+      );
+      setCategories(categoriesResponse.data);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
+
+  useEffect(() => {
+    const filtered = coursesCard.filter(
+      (course) =>
+        (selectedCategory === "" || course.category_id === selectedCategory) &&
+        (searchQuery === "" ||
+          course.title.toLowerCase().includes(searchQuery.toLowerCase()))
+    );
+    setFilteredCourses(filtered);
+  }, [coursesCard, selectedCategory, searchQuery]);
+
+  const handleSearch = (query) => {
+    setSearchQuery(query);
+  };
+
+  const handleSelectCategory = (categoryId) => {
+    if (categoryId === selectedCategory) {
+      setSelectedCategory("");
+    } else {
+      setSelectedCategory(categoryId);
+    }
+  };
+
+  const handleShowAll = () => {
+    setSelectedCategory("");
+  };
+
+  // Logic for pagination
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentCourses = filteredCourses.slice(indexOfFirstItem, indexOfLastItem);
+
+  // Change page
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
+  return (
+    <section className="coursesCard">
+      <Categories
+        categories={categories}
+        onSelectCategory={handleSelectCategory}
+        onSearch={handleSearch}
+        selectedCategory={selectedCategory}
+      />
+      <div className='coursesCard-container'>
+        {currentCourses.map((course) => (
+          <div className='coursesCard-item' key={course.id}>
+            <div className='content'>
+              <h2 className='coursesCard-title'>{course.title}</h2>
+              <img src={course.image} alt={course.title} />
+              <p className='coursesCard-lecturer'>{course.lecturer}</p>
+              <p className='coursesCard-description'>{course.description}</p>
+              <button className='coursesCard-enroll-btn'>ENROLL NOW</button>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div className="pagination">
+        {Array.from({ length: Math.ceil(filteredCourses.length / itemsPerPage) }, (_, index) => (
+          <button key={index} onClick={() => paginate(index + 1)} className={currentPage === index + 1 ? 'active' : ''}>
+            {index + 1}
+          </button>
+        ))}
+      </div>
+    </section>
+  );
+};
+
+export default CoursesCard;
