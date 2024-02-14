@@ -10,7 +10,7 @@ import About from './components/about/About';
 import CourseHome from './components/allcourses/CourseHome';
 import Team from './components/team/Team';
 import News from './components/news/News';
-import Categories from './components/categories/Categories';
+// import Categories from './components/categories/Categories';
 import Books from './components/books/Books';
 import Contact from './components/contact/Contact';
 import Dashboard from './components/dashboard/Dashboard';
@@ -33,8 +33,8 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/categories" element={<Categories />} />
-          <Route path="/courses" element={<CourseHome />} />
+          {/* <Route path="/categories" element={<Categories />} /> */}
+          <Route path="/courses/*" element={<CourseHome />} />
           <Route path="/team" element={<Team />} />
           <Route path="/news" element={<News />} />
           <Route path="/books" element={<Books />} />

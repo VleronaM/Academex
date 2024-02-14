@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./courses.css";
 import axios from "axios";
 import Categories from "./Categories";
+import { Link } from 'react-router-dom';
 
 const CoursesCard = () => {
   const [coursesCard, setCoursesCard] = useState([]);
@@ -80,7 +81,11 @@ const CoursesCard = () => {
               <img src={course.image} alt={course.title} />
               <p className='coursesCard-lecturer'>{course.lecturer}</p>
               <p className='coursesCard-description'>{course.description}</p>
-              <button className='coursesCard-enroll-btn'>ENROLL NOW</button>
+              <button className='coursesCard-enroll-btn'>
+                <Link to={`/courses/${course.id}`} className='coursesCard-enroll-link'>
+                  START NOW
+                </Link>
+              </button>
             </div>
           </div>
         ))}
