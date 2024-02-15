@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import './loginApp.css'
+import './loginApp.css';
 
 const Login = (props) => {
   const [email, setEmail] = useState('');
   const [pass, setPass] = useState('');
-  const navigate = useNavigate(); // Define navigate function
+  const navigate = useNavigate(); 
 
   async function login() {
     try {
@@ -14,24 +14,23 @@ const Login = (props) => {
         email: email,
         password: pass
       };
+      const response = await axios.get('http://localhost:3030/users/login', loginData);
 
-      // Send POST request to the API
-      const response = await axios.get('http://localhost:3030/users', loginData);
-
-      // Assuming the API returns some response data upon successful login
       console.log('Login successful', response.data);
 
-      // Redirect to home page
+      const role = response.data.role;
+
+      localStorage.setItem('userRole', role);
+
       navigate('/');
     } catch (error) {
-      // Handle login error
       console.error('Login failed', error);
     }
   }
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    login(); // Call the login function when the form is submitted
+    login(); 
   };
 
   return (
