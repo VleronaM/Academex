@@ -17,17 +17,8 @@ import Dashboard from './components/dashboard/Dashboard';
 import LoginApp from './components/login/loginApp';
 
 const App = () => {
-  const [data, setData] = useState("");
-  const getData = async() => {
-    const response = await Axios.get("http://localhost:3030/getData");
-    setData(response.data);
-  }
-  useEffect(() =>{
-  getData()
-},[]);
   return (
     <>
-    <div>{data}</div>
       <Router>
         <HeaderWithCondition />
         <Routes>
