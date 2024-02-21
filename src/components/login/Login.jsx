@@ -14,21 +14,26 @@ const Login = (props) => {
         email: email,
         password: pass
       };
-      const response = await axios.get('http://localhost:3030/users/login', loginData);
-
+  
+      const response = await axios.post('http://localhost:3030/login', loginData);
+  
       console.log('Login successful', response.data);
+  
+      const { token, userRole } = response.data;
 
-      const role = response.data.role;
-
-      localStorage.setItem('userRole', role);
-
+      localStorage.setItem('token', token);
+      localStorage.setItem('userRole', userRole);
+      props.setLoggedIn(true); 
+      props.setUserRole(userRole); 
       navigate('/');
+      window.location.reload(); 
     } catch (error) {
       console.error('Login failed', error);
     }
   }
+  
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     login(); 
   };

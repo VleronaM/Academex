@@ -3,9 +3,14 @@ import Head from "./Head";
 import "./style/header.css";
 import { Link } from "react-router-dom";
 
+const Header = ({ loggedIn, userRole, setLoggedIn, setUserRole }) => {
+  const [click, setClick] = useState(false);
 
-const Header = () => {
-  const [click, setClick] = useState(false)
+  const handleLogout = () => {
+    localStorage.clear();
+    window.location.reload(); 
+  };
+
   return (
     <div>
       <Head />
@@ -15,9 +20,6 @@ const Header = () => {
             <li>
               <Link to='/'>Home</Link>
             </li>
-            {/* <li>
-              <Link to='/categories'>Categories</Link>
-            </li> */}
             <li>
               <Link to='/courses'>Courses</Link>
             </li>
@@ -36,14 +38,20 @@ const Header = () => {
             <li>
               <Link to='/contact'>Contact</Link>
             </li>
-            <li>
-              <Link to='/dashboard'>Dashboard</Link>
-            </li>
+            {loggedIn && userRole === "admin" && (
+              <li>
+                <Link to='/dashboard'>Dashboard</Link>
+              </li>
+            )}
           </ul>
           <div className="start">
-            <Link to='/login'>
-              <div className="get-started-link">Get Started!</div>
-            </Link>
+            {loggedIn ? (
+              <button className="logout-btn" onClick={handleLogout}>Log Out</button>
+            ) : (
+              <Link to='/login'>
+                <div className="get-started-link">Get Started!</div>
+              </Link>
+            )}
           </div>
           <button className='toggle' onClick={() => setClick(!click)}>
             {click ? <i className='fa fa-times' ></i> : <i className='fa fa-bars'></i>}
@@ -51,6 +59,7 @@ const Header = () => {
         </nav>
       </header>
     </div>
-  )
-}
+  );
+};
+
 export default Header;
