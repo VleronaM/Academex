@@ -11,8 +11,9 @@ import Books from './components/books/Books';
 import Contact from './components/contact/Contact';
 import Dashboard from './components/dashboard/Dashboard';
 import LoginApp from './components/login/loginApp';
+import UnauthorizedAccess from './components/unauthorizedAccess/unauthorizedAccess';
 
-const App = () => {
+function App() {
   const [loggedIn, setLoggedIn] = useState(false);
   const [userRole, setUserRole] = useState('');
 
@@ -37,14 +38,17 @@ const App = () => {
         <Route path="/news" element={<News />} />
         <Route path="/books" element={<Books />} />
         <Route path="/contact" element={<Contact />} />
-        {loggedIn && userRole === 'admin' && <Route path="/dashboard" element={<Dashboard />} />}
+        {loggedIn && userRole === 'admin' ? (
+          <Route path="/dashboard" element={<Dashboard />} />
+        ) : (
+          <Route path="/dashboard" element={<UnauthorizedAccess />} />
+        )}
         <Route path="/login" element={<LoginApp setLoggedIn={setLoggedIn} setUserRole={setUserRole} />} />
-        {/* Add a catch-all route for unauthorized access */}
-        {/* <Route path="/*" element={<UnauthorizedAccess />} /> */}
+        <Route path="/*" element={<UnauthorizedAccess />} />
       </Routes>
       <Footer />
     </Router>
   );
-};
+}
 
 export default App;
