@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Navigate } from 'react-router-dom'; // Import Navigate instead of Redirect
 import axios from 'axios';
 
 const CourseDetail = () => {
@@ -7,22 +7,34 @@ const CourseDetail = () => {
   const [course, setCourse] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [authorized, setAuthorized] = useState(true); // Initially assume authorized
 
   useEffect(() => {
     const fetchCourse = async () => {
       try {
-        const response = await axios.get(`http://localhost:3030/courses/${id}`);
+        const response = await axios.get(`http://localhost:3030/courses/${id}`, {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem('token')}`
+          }
+        });
         setCourse(response.data);
       } catch (error) {
-        setError(error.message);
+        if (error.response.status === 401) { // Unauthorized
+          setAuthorized(false);
+        } else {
+          setError(error.message);
+        }
       } finally {
         setLoading(false);
       }
     };
 
-
     fetchCourse();
   }, [id]);
+
+  if (!authorized) {
+    return <Navigate to="/login" />; // Use Navigate instead of Redirect
+  }
 
   if (loading) {
     return <div>Loading...</div>;

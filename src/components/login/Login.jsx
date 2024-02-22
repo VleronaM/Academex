@@ -20,17 +20,18 @@ const Login = (props) => {
       console.log('Login successful', response.data);
   
       const { token, userRole } = response.data;
-
+  
       localStorage.setItem('token', token);
-      localStorage.setItem('userRole', userRole);
-      props.setLoggedIn(true); 
-      props.setUserRole(userRole); 
+      localStorage.setItem('userRole', userRole); 
+      props.setLoggedIn(true);
+      props.setUserRole(userRole);
       navigate('/');
-      window.location.reload(); 
+      window.location.reload();
     } catch (error) {
       console.error('Login failed', error);
     }
   }
+  
   
 
   const handleSubmit = async (e) => {
