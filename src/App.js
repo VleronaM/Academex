@@ -1,61 +1,54 @@
-import './App.css';
+import React, { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Common/Common/Header';
 import Footer from './components/Common/Common/Footer';
-import Head from './components/Common/Common/Head';
-import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
-import React, { useEffect, useState } from 'react';
-import Axios from "axios";
-// import Home from "./components/home/Home";
-// import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-// import React, { Component } from 'react';
 import Home from "./components/home/Home";
 import About from './components/about/About';
 import CourseHome from './components/allcourses/CourseHome';
 import Team from './components/team/Team';
 import News from './components/news/News';
-import Categories from './components/categories/Categories';
 import Books from './components/books/Books';
 import Contact from './components/contact/Contact';
 import Dashboard from './components/dashboard/Dashboard';
 import LoginApp from './components/login/loginApp';
+import UnauthorizedAccess from './components/unauthorizedAccess/unauthorizedAccess';
 
-const App = () => {
-  const [data, setData] = useState("");
-  const getData = async() => {
-    const response = await Axios.get("http://localhost:3030/getData");
-    setData(response.data);
-  }
-  useEffect(() =>{
-  getData()
-},[]);
+function App() {
+  const [loggedIn, setLoggedIn] = useState(false);
+  const [userRole, setUserRole] = useState('');
+
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    const role = localStorage.getItem('userRole');
+
+    if (token && role) {
+      setLoggedIn(true);
+      setUserRole(role);
+    }
+  }, []);
+
   return (
-    <>
-    <div>{data}</div>
-      <Router>
-        <HeaderWithCondition />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/categories" element={<Categories />} />
-          <Route path="/courses" element={<CourseHome />} />
-          <Route path="/team" element={<Team />} />
-          <Route path="/news" element={<News />} />
-          <Route path="/books" element={<Books />} />
-          <Route path="/contact" element={<Contact />} />
+    <Router>
+      <Header loggedIn={loggedIn} userRole={userRole} />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/courses/*" element={<CourseHome />} />
+        <Route path="/team" element={<Team />} />
+        <Route path="/news" element={<News />} />
+        <Route path="/books" element={<Books />} />
+        <Route path="/contact" element={<Contact />} />
+        {loggedIn && userRole === 'admin' ? (
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/login" element={<LoginApp />} />
-        </Routes>
-        <Footer />
-      </Router>
-    </>
+        ) : (
+          <Route path="/dashboard" element={<UnauthorizedAccess />} />
+        )}
+        <Route path="/login" element={<LoginApp setLoggedIn={setLoggedIn} setUserRole={setUserRole} />} />
+        {/* <Route path="/*" element={<UnauthorizedAccess />} /> */}
+      </Routes>
+      <Footer />
+    </Router>
   );
-};
-
-const HeaderWithCondition = () => {
-  const location = useLocation();
-  const showHeadOnly = location.pathname === '/login';
-
-  return showHeadOnly ? <Head /> : <Header />;
-};
+}
 
 export default App;

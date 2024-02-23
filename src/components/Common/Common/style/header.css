@@ -11,7 +11,6 @@
 #logoheader img {
   width: 288px;
   height: 58px;
-
 }
 
 .head .icon {
@@ -25,41 +24,77 @@ header {
 }
 
 header ul {
-  padding: 30px 20px
+  padding: 30px 20px;
+  display: flex; 
+  list-style: none; 
 }
 
-header li {
+header ul li {
   margin-right: 40px;
+  height: 100%; 
+  display: flex; 
+  align-items: center; 
+}
+
+header ul li:last-child {
+  margin-right: 0;
 }
 
 header ul li a {
   color: #fff;
   font-weight: 500;
-  transition: 0.5;
+  transition: 0.5s;
+  text-decoration: none; 
 }
 
 header ul li a:hover {
   color: #E90064;
   text-shadow: 1px 1px 1px #E90064;
-
 }
 
 .start {
+  width: 18%;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
   background-color: #E90064;
-  padding: 30px 70px;
+  padding: 10px 20px; 
   color: white;
   clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%);
 }
+
 .start .get-started-link {
   color: white;
   text-decoration: none;
+}
+
+.start .login-btn,
+.start .logout-btn {
+  color: white;
+  text-decoration: none;
+  background-color: #E90064;
+  border: 2px solid #E90064;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 12px 24px;
+  margin-bottom: 10px;
+  transition: all 0.3s ease; 
+  font-size: 14px; 
+  text-transform: uppercase; 
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1); 
+}
+
+.start .login-btn:hover,
+.start .logout-btn:hover {
+  border-color: #D70054;
+  transform: scale(1.05); /* Scale button on hover */
 }
 
 .toggle {
   display: none;
 }
 
-@media screen and (max-width:768px) {
+@media screen and (max-width: 768px) {
   .start {
     clip-path: none;
   }
