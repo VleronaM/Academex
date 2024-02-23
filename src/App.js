@@ -44,7 +44,7 @@ function App() {
           <Route path="/dashboard" element={<UnauthorizedAccess />} />
         )}
         <Route path="/login" element={<LoginApp setLoggedIn={setLoggedIn} setUserRole={setUserRole} />} />
-        <Route path="/*" element={<UnauthorizedAccess />} />
+        {/* <Route path="/*" element={<UnauthorizedAccess />} /> */}
       </Routes>
       <Footer />
     </Router>

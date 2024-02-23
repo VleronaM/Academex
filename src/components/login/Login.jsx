@@ -19,10 +19,11 @@ const Login = (props) => {
   
       console.log('Login successful', response.data);
   
-      const { token, userRole } = response.data;
+      const { token, userRole, userId } = response.data; 
   
       localStorage.setItem('token', token);
       localStorage.setItem('userRole', userRole); 
+      localStorage.setItem('userId', userId); 
       props.setLoggedIn(true);
       props.setUserRole(userRole);
       navigate('/');
@@ -31,8 +32,6 @@ const Login = (props) => {
       console.error('Login failed', error);
     }
   }
-  
-  
 
   const handleSubmit = async (e) => {
     e.preventDefault();

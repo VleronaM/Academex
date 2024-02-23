@@ -23,6 +23,11 @@ const Header = ({ loggedIn, userRole, setLoggedIn, setUserRole }) => {
             <li>
               <Link to='/courses'>Courses</Link>
             </li>
+            {loggedIn && (
+              <li>
+                <Link to='/courses/my-courses'>My Courses</Link>
+              </li>
+            )}
             <li>
               <Link to='/books'>Books</Link>
             </li>
@@ -49,7 +54,7 @@ const Header = ({ loggedIn, userRole, setLoggedIn, setUserRole }) => {
               <button className="logout-btn" onClick={handleLogout}>Log Out</button>
             ) : (
               <Link to='/login'>
-                <div className="get-started-link">Get Started!</div>
+                <button className="login-btn">Log In</button>
               </Link>
             )}
           </div>
