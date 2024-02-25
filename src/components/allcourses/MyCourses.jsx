@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import CoursesCard from './CoursesCard'; // Import the CoursesCard component
 
 const MyCourses = () => {
-  const [userCourses, setUserCourses] = useState([]);
+  const [userEnrolledCourses, setUserEnrolledCourses] = useState([]);
 
   useEffect(() => {
-    fetchUserCourses();
+    fetchUserEnrolledCourses();
   }, []);
 
-  const fetchUserCourses = async () => {
+  const fetchUserEnrolledCourses = async () => {
     try {
-      // Assume you have the userId stored in localStorage
       const userId = localStorage.getItem('userId');
       if (!userId) {
         console.error('User ID not found in localStorage');
@@ -18,9 +18,10 @@ const MyCourses = () => {
       }
 
       const response = await axios.get(`http://localhost:3030/users/${userId}/courses`);
-      setUserCourses(response.data);
+      const userCoursesData = response.data;
+      setUserEnrolledCourses(userCoursesData.courses); // Assuming the response contains a 'courses' property
     } catch (error) {
-      console.error('Error fetching user courses:', error);
+      console.error('Error fetching user enrolled courses:', error);
     }
   };
 
@@ -28,13 +29,20 @@ const MyCourses = () => {
     <div>
       <h1>My Courses</h1>
       <div className="courses-container">
-        {userCourses.map(course => (
-          <div className="course-card" key={course.id}>
-            <h2>{course.title}</h2>
-            <p>{course.description}</p>
-            {/* You can display more information about the course */}
-          </div>
-        ))}
+        {userEnrolledCourses.length > 0 ? (
+          userEnrolledCourses.map(course => (
+            <div className="coursesCard-item" key={course.id}>
+              <div className="content">
+                <h2 className="coursesCard-title">{course.title}</h2>
+                <img src={course.image} alt={course.title} />
+                <p className="coursesCard-lecturer">{course.lecturer}</p>
+                <p className="coursesCard-description">{course.description}</p>
+              </div>
+            </div>
+          ))
+        ) : (
+          <p>No courses enrolled</p>
+        )}
       </div>
     </div>
   );
