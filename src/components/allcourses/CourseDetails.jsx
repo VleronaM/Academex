@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, Navigate } from 'react-router-dom'; // Import Navigate instead of Redirect
+import { useParams, Navigate } from 'react-router-dom'; 
 import axios from 'axios';
 
 const CourseDetail = () => {
@@ -7,7 +7,7 @@ const CourseDetail = () => {
   const [course, setCourse] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [authorized, setAuthorized] = useState(true); // Initially assume authorized
+  const [authorized, setAuthorized] = useState(true);
 
   useEffect(() => {
     const fetchCourse = async () => {
@@ -33,7 +33,7 @@ const CourseDetail = () => {
   }, [id]);
 
   if (!authorized) {
-    return <Navigate to="/login" />; // Use Navigate instead of Redirect
+    return <Navigate to="/login" />; 
   }
 
   if (loading) {

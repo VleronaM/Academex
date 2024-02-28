@@ -12,7 +12,7 @@ const CourseHome = () => {
             <Routes>
             <Route path="/" element={<CoursesCard />} />
             <Route path="/:id" element={<CourseDetail />} />
-            <Route path="/my-courses" element={<MyCourses />} />
+            <Route path="/my-courses" element={<MyCourses />} /> 
             </Routes>
         </>
     );
