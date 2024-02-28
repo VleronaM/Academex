@@ -38,7 +38,12 @@ const UsersDashboardCard = () => {
 
     const deleteUser = async (id) => {
         try {
-            await axios.delete(`http://localhost:3030/users/delete/${id}`);
+            const token = localStorage.getItem('token');
+            await axios.delete(`http://localhost:3030/users/delete/${id}`, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
             fetchUsers();
         } catch (error) {
             console.error('Error deleting user:', error);
@@ -55,7 +60,12 @@ const UsersDashboardCard = () => {
 
     const updateUser = async () => {
         try {
-            await axios.patch(`http://localhost:3030/users/update/${editUserId}`, newUser);
+            const token = localStorage.getItem('token');
+            await axios.patch(`http://localhost:3030/users/update/${editUserId}`, newUser, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
             fetchUsers();
             setEditUserId(null);
             setNewUser({ name: '', surname: '', email: '', password: '', role: '' });

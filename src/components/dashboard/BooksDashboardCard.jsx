@@ -28,7 +28,12 @@ const BooksDashboardCard = () => {
 
     const addBook = async () => {
         try {
-            await axios.post('http://localhost:3030/books/create', newBook);
+            const token = localStorage.getItem('token');
+            await axios.post('http://localhost:3030/books/create', newBook, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
             fetchBooks();
             setNewBook({ title: '', image: '', author: '', link: '' });
         } catch (error) {
@@ -38,7 +43,12 @@ const BooksDashboardCard = () => {
 
     const deleteBook = async (id) => {
         try {
-            await axios.delete(`http://localhost:3030/books/delete/${id}`);
+            const token = localStorage.getItem('token');
+            await axios.delete(`http://localhost:3030/books/delete/${id}`, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
             fetchBooks();
         } catch (error) {
             console.error('Error deleting book:', error);
@@ -53,9 +63,19 @@ const BooksDashboardCard = () => {
         }
     };
 
+    
     const updateBook = async () => {
         try {
-            await axios.patch(`http://localhost:3030/books/update/${editBookId}`, newBook);
+            const token = localStorage.getItem('token');
+            const updatedBookData = {
+                ...newBook,
+                bookId: editBookId 
+            };
+            await axios.patch(`http://localhost:3030/books/update/${editBookId}`, updatedBookData, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
             fetchBooks();
             setEditBookId(null);
             setNewBook({ title: '', image: '', author: '', link: '' });
@@ -63,7 +83,7 @@ const BooksDashboardCard = () => {
             console.error('Error updating book:', error);
         }
     };
-
+    
 
 
     return (

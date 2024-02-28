@@ -28,7 +28,12 @@ const NewsDashboardCard = () => {
 
     const addNews = async () => {
         try {
-            await axios.post('http://localhost:3030/news/create', newNews);
+            const token = localStorage.getItem('token');
+            await axios.post('http://localhost:3030/news/create', newNews, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
             fetchNews();
             setNewNews({ title: '', content: '', imageUrl: '' });
         } catch (error) {
@@ -38,7 +43,12 @@ const NewsDashboardCard = () => {
 
     const deleteNews = async (id) => {
         try {
-            await axios.delete(`http://localhost:3030/news/delete/${id}`);
+            const token = localStorage.getItem('token');
+            await axios.delete(`http://localhost:3030/news/delete/${id}`, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
             fetchNews();
         } catch (error) {
             console.error('Error deleting news:', error);
@@ -55,7 +65,16 @@ const NewsDashboardCard = () => {
 
     const updateNews = async () => {
         try {
-            await axios.patch(`http://localhost:3030/news/update/${editNewsId}`, newNews);
+            const token = localStorage.getItem('token');
+            const updatedNewsData = {
+                ...newNews,
+                newsId: editNewsId 
+            };
+            await axios.patch(`http://localhost:3030/news/update/${editNewsId}`, updatedNewsData, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
             fetchNews();
             setEditNewsId(null);
             setNewNews({ title: '', content: '', imageUrl: '' });

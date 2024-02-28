@@ -21,12 +21,18 @@ const ContactUsDashboardCard = () => {
 
     const deleteContact = async (id) => {
         try {
-            await axios.delete(`http://localhost:3030/contact/delete/${id}`);
+            const token = localStorage.getItem('token');
+            await axios.delete(`http://localhost:3030/contact/delete/${id}`, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
             fetchContacts();
         } catch (error) {
             console.error('Error deleting contact:', error);
         }
     };
+    
 
     return (
         <>

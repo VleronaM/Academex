@@ -28,7 +28,12 @@ const CoursesDashboardCard = () => {
 
     const addCourse = async () => {
         try {
-            await axios.post('http://localhost:3030/courses/create', newCourse);
+            const token = localStorage.getItem('token');
+            await axios.post('http://localhost:3030/courses/create', newCourse, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
             fetchCourses();
             setNewCourse({ title: '', description: '', image: '', lecturer: '', url: '', category_id: '' });
         } catch (error) {
@@ -38,7 +43,12 @@ const CoursesDashboardCard = () => {
 
     const deleteCourse = async (id) => {
         try {
-            await axios.delete(`http://localhost:3030/courses/delete/${id}`);
+            const token = localStorage.getItem('token');
+            await axios.delete(`http://localhost:3030/courses/delete/${id}`, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
             fetchCourses();
         } catch (error) {
             console.error('Error deleting course:', error);
@@ -55,7 +65,16 @@ const CoursesDashboardCard = () => {
 
     const updateCourse = async () => {
         try {
-            await axios.patch(`http://localhost:3030/courses/update/${editCourseId}`, newCourse);
+            const token = localStorage.getItem('token');
+            const updatedCourseData = {
+                ...newCourse,
+                courseId: editCourseId 
+            };
+            await axios.patch(`http://localhost:3030/courses/update/${editCourseId}`, updatedCourseData, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
             fetchCourses();
             setEditCourseId(null);
             setNewCourse({ title: '', description: '', image: '', lecturer: '', url: '', category_id: '' });
@@ -63,6 +82,7 @@ const CoursesDashboardCard = () => {
             console.error('Error updating course:', error);
         }
     };
+    
 
     return (
         <section className='courses'>

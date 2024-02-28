@@ -7,6 +7,7 @@ const CategoriesDashboardCard = () => {
     const [categories, setCategories] = useState([]);
     const [newCategory, setNewCategory] = useState({ name: '' });
     const [editCategoryId, setEditCategoryId] = useState(null);
+    const userRole = localStorage.getItem('userRole');
 
     useEffect(() => {
         fetchCategories();
@@ -28,7 +29,16 @@ const CategoriesDashboardCard = () => {
 
     const addCategory = async () => {
         try {
-            await axios.post('http://localhost:3030/categories/create', newCategory);
+            if (userRole !== 'admin') {
+                console.error('User does not have admin privileges to create a category.');
+                return;
+            }
+            const token = localStorage.getItem('token'); 
+            await axios.post('http://localhost:3030/categories/create', newCategory, {
+                headers: {
+                    Authorization: `Bearer ${token}` 
+                }
+            });
             fetchCategories();
             setNewCategory({ name: '' });
         } catch (error) {
@@ -36,14 +46,19 @@ const CategoriesDashboardCard = () => {
         }
     };
 
-    const deleteCategory = async (id) => {
-        try {
-            await axios.delete(`http://localhost:3030/categories/delete/${id}`);
-            fetchCategories();
-        } catch (error) {
-            console.error('Error deleting category:', error);
-        }
-    };
+const deleteCategory = async (id) => {
+    try {
+        const token = localStorage.getItem('token');
+        await axios.delete(`http://localhost:3030/categories/delete/${id}`, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        });
+        fetchCategories();
+    } catch (error) {
+        console.error('Error deleting category:', error);
+    }
+};
 
     const editCategory = async (id) => {
         setEditCategoryId(id);
@@ -55,7 +70,12 @@ const CategoriesDashboardCard = () => {
 
     const updateCategory = async () => {
         try {
-            await axios.patch(`http://localhost:3030/categories/update/${editCategoryId}`, newCategory);
+            const token = localStorage.getItem('token');
+            await axios.patch(`http://localhost:3030/categories/update/${editCategoryId}`, newCategory, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
             fetchCategories();
             setEditCategoryId(null);
             setNewCategory({ name: '' });
@@ -63,7 +83,7 @@ const CategoriesDashboardCard = () => {
             console.error('Error updating category:', error);
         }
     };
-
+    
     return (
         <>
             <section className='categories'>
