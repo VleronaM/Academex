@@ -19,7 +19,7 @@ const MyCourses = () => {
 
       const response = await axios.get(`http://localhost:3030/users/${userId}/courses`);
       const userCoursesData = response.data;
-      setUserEnrolledCourses(userCoursesData.courses); // Assuming the response contains a 'courses' property
+      setUserEnrolledCourses(userCoursesData.courses); 
     } catch (error) {
       console.error('Error fetching user enrolled courses:', error);
     }
