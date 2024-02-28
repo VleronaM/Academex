@@ -23,7 +23,7 @@ const Header = ({ loggedIn, userRole, setLoggedIn, setUserRole }) => {
             <li>
               <Link to='/courses'>Courses</Link>
             </li>
-            {loggedIn && (
+            {loggedIn && userRole !== "admin" && (
               <li>
                 <Link to='/courses/my-courses'>My Courses</Link>
               </li>
