@@ -6,18 +6,19 @@ import NewsDashboardCard from './NewsDashboardCard';
 import UsersDashboardCard from './UsersDashboardCard';
 import ContactDashboardCard from './ContactDashboardCard';
 import CategoriesDashboardCard from './CategoriesDashboardCard';
+import UserCoursesDashboard from './UserCoursesDashboard ';
 
 const Dashboard = () => {
     return (
         <>
             <Back title="Dashboard" />
-            <BooksDashboardCard />
-            <CoursesDashboardCard />
-            <NewsDashboardCard />
-            <UsersDashboardCard />
-            <ContactDashboardCard />
             <CategoriesDashboardCard />
-
+            <CoursesDashboardCard />
+            <ContactDashboardCard />
+            <NewsDashboardCard />
+            <BooksDashboardCard />
+            <UsersDashboardCard />
+            <UserCoursesDashboard />
         </>
     )
 }
