@@ -1,3 +1,5 @@
+/* dashboard.css */
+
 .dashboard {
   display: flex;
   flex-wrap: wrap;
@@ -15,6 +17,7 @@
 
 .container table {
   width: 100%;
+  border-collapse: collapse;
 }
 
 .container th,
@@ -22,15 +25,12 @@
   padding: 10px;
   text-align: left;
   background-color: white;
+  border: 1px solid #ddd;
 }
 
-.container .actions button {
-  background-color: #e90064;
-  color: #ffffff;
-  border: none;
-  padding: 5px 10px;
-  cursor: pointer;
-  margin-right: 5px;
+.container th {
+  background-color: #f2f2f2;
+  font-weight: bold;
 }
 
 .container .add-inputs {
@@ -39,13 +39,16 @@
   margin-bottom: 10px;
 }
 
-.container .add-inputs input {
+.container .add-inputs input,
+.container .add-inputs textarea {
   margin-right: 10px;
   margin-bottom: 10px;
   height: 48px;
   width: 185px;
   border: 1px solid #e90064;
   border-radius: 6px;
+  padding: 5px;
+  box-sizing: border-box;
   text-align: center;
 }
 
@@ -55,68 +58,15 @@
   border: none;
   cursor: pointer;
   margin: 0px 10px 0px 0px;
+  padding: 5px 10px;
 }
 
 .container h2 {
   margin: 20px;
 }
 
-.container .add-inputs textarea {
-  margin-right: 10px;
-  margin-bottom: 10px;
-  height: 48px;
-  width: 185px;
-  border: 1px solid #e90064;
-  border-radius: 6px;
-  text-align: center;
-}
-
-#news-text {
-  width: 100%;
-  height: 40%;
-}
-
-/* categories */
-.categories .container {
-  width: 100%;
-}
-
-.categories .content {
-  text-align: center;
-}
-
-.categories .content button {
+.toggleButton{
   display: block;
   margin: 0 auto; 
   margin-bottom: 10px; 
-}
-
-.categories .content table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.categories .content th,
-.categories .content td {
-  padding: 8px;
-  border: 1px solid #ddd;
-}
-
-.categories .content th {
-  background-color: #f2f2f2;
-  font-weight: bold;
-}
-
-.categories .content tr:nth-child(even) {
-  background-color: #f2f2f2;
-}
-
-.categories .content tr:hover {
-  background-color: #ddd;
-}
-
-.categories .content input[type="text"] {
-  width: 20%;
-  padding: 5px;
-  box-sizing: border-box;
 }

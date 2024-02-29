@@ -7,18 +7,11 @@ const CategoriesDashboardCard = () => {
     const [categories, setCategories] = useState([]);
     const [newCategory, setNewCategory] = useState({ name: '' });
     const [editCategoryId, setEditCategoryId] = useState(null);
-    const [showCategories, setShowCategories] = useState(false); 
     const userRole = localStorage.getItem('userRole');
 
     useEffect(() => {
-        if (showCategories) {
-            fetchCategories();
-        }
-    }, [showCategories]); // Fetch categories only if showCategories changes
-
-    const toggleCategories = () => {
-        setShowCategories(!showCategories);
-    };
+        fetchCategories();
+    }, []);
 
     const fetchCategories = async () => {
         try {
@@ -53,19 +46,19 @@ const CategoriesDashboardCard = () => {
         }
     };
 
-    const deleteCategory = async (id) => {
-        try {
-            const token = localStorage.getItem('token');
-            await axios.delete(`http://localhost:3030/categories/delete/${id}`, {
-                headers: {
-                    Authorization: `Bearer ${token}`
-                }
-            });
-            fetchCategories();
-        } catch (error) {
-            console.error('Error deleting category:', error);
-        }
-    };
+const deleteCategory = async (id) => {
+    try {
+        const token = localStorage.getItem('token');
+        await axios.delete(`http://localhost:3030/categories/delete/${id}`, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        });
+        fetchCategories();
+    } catch (error) {
+        console.error('Error deleting category:', error);
+    }
+};
 
     const editCategory = async (id) => {
         setEditCategoryId(id);
@@ -90,73 +83,68 @@ const CategoriesDashboardCard = () => {
             console.error('Error updating category:', error);
         }
     };
-
+    
     return (
         <>
             <section className='categories'>
                 <div className="container">
                     <Title subtitle="Dashboard/Categories" />
                     <div className="content">
-                        <button onClick={toggleCategories}>
-                            {showCategories ? 'Hide Categories' : 'Show Categories'}
-                        </button>
-                        {showCategories && (
-                            <>
-                                <table>
-                                    <thead>
-                                        <tr>
-                                            <th>ID</th>
-                                            <th>Name</th>
-                                            <th>Actions</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {categories.map((category) => (
-                                            <tr key={category.id}>
-                                                <td>{category.id}</td>
-                                                <td>{editCategoryId === category.id ?
-                                                    <input
-                                                        type="text"
-                                                        name="name"
-                                                        value={newCategory.name}
-                                                        onChange={handleInputChange}
-                                                    /> :
-                                                    category.name
-                                                }</td>
-                                                <td>
-                                                    {editCategoryId === category.id ?
-                                                        <>
-                                                            <button onClick={updateCategory}>Save</button>
-                                                            <button onClick={() => setEditCategoryId(null)}>Cancel</button>
-                                                        </>
-                                                        :
-                                                        <>
-                                                            <button onClick={() => deleteCategory(category.id)}>Delete</button>
-                                                            <button onClick={() => editCategory(category.id)}>Edit</button>
-                                                        </>
-                                                    }
-                                                </td>
-                                            </tr>
-                                        ))}
-                                    </tbody>
-                                </table>
-                                {editCategoryId === null && (
-                                    <div className="add-inputs">
-                                        <input
-                                            type="text"
-                                            name="name"
-                                            placeholder="Name"
-                                            value={newCategory.name}
-                                            onChange={handleInputChange}
-                                        />
-                                        <button className='addButton' onClick={addCategory}>Add Category</button>
-                                    </div>
-                                )}
-                            </>
+                        <h1>Categories</h1>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {categories.map((category) => (
+                                    <tr key={category.id}>
+                                        <td>{category.id}</td>
+                                        <td>{editCategoryId === category.id ?
+                                            <input
+                                                type="text"
+                                                name="name"
+                                                value={newCategory.name}
+                                                onChange={handleInputChange}
+                                            /> :
+                                            category.name
+                                        }</td>
+                                        <td>
+                                            {editCategoryId === category.id ?
+                                                <>
+                                                    <button onClick={updateCategory}>Save</button>
+                                                    <button onClick={() => setEditCategoryId(null)}>Cancel</button>
+                                                </>
+                                                :
+                                                <>
+                                                    <button onClick={() => deleteCategory(category.id)}>Delete</button>
+                                                    <button onClick={() => editCategory(category.id)}>Edit</button>
+                                                </>
+                                            }
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                        {editCategoryId === null && (
+                            <div className="add-inputs">
+                                <input
+                                    type="text"
+                                    name="name"
+                                    placeholder="Name"
+                                    value={newCategory.name}
+                                    onChange={handleInputChange}
+                                />
+                                <button onClick={addCategory}>Add Category</button>
+                            </div>
                         )}
                     </div>
                 </div>
             </section>
+            
         </>
     );
 };

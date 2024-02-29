@@ -200,7 +200,6 @@ const BooksDashboardCard = () => {
                     </div>
                 </div>
             </section>
-            {/* Other sections */}
         </>
     );
 };
