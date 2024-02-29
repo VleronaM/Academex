@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import CoursesCard from './CoursesCard'; // Import the CoursesCard component
+import { Link } from 'react-router-dom';
 
 const MyCourses = () => {
   const [userEnrolledCourses, setUserEnrolledCourses] = useState([]);
@@ -28,15 +28,18 @@ const MyCourses = () => {
   return (
     <div>
       <h1>My Courses</h1>
-      <div className="courses-container">
+      <div className="coursesCard-container">
         {userEnrolledCourses.length > 0 ? (
           userEnrolledCourses.map(course => (
             <div className="coursesCard-item" key={course.id}>
               <div className="content">
                 <h2 className="coursesCard-title">{course.title}</h2>
-                <img src={course.image} alt={course.title} />
+                <img src={`/${course.image}`} alt={course.title} />
                 <p className="coursesCard-lecturer">{course.lecturer}</p>
                 <p className="coursesCard-description">{course.description}</p>
+                <Link to={`/courses/${course.id}`} className="coursesCard-go-to-btn">
+                  Go to Course
+                </Link>
               </div>
             </div>
           ))

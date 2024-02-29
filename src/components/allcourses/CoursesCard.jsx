@@ -64,27 +64,20 @@ const CoursesCard = () => {
   const handleConfirmEnroll = async () => {
     try {
       setShowModal(false);
-      // Get userId from localStorage
       const userId = localStorage.getItem('userId');
       if (!userId) {
-        // Alert the user that they need to be logged in
         alert('You need to be logged in to enroll in a course.');
-        // Redirect to login page
         window.location.href = '/login';
         return;
       }
-      // Make POST request to enroll user in course
       await axios.post(`http://localhost:3030/users/${userId}/courses/create`, {
         userId: parseInt(userId), // Parse userId to ensure it's an integer
-        courseId: enrolledCourse.id // Assuming you need to send courseId
+        courseId: enrolledCourse.id 
       });
-      // Show enrollment success message
       alert('You have successfully enrolled in the course.');
-      // Redirect to course details page
       window.location.href = `/courses/${enrolledCourse.id}`;
     } catch (error) {
       console.error('Error enrolling user in course:', error);
-      // Optionally, you can add logic here to handle errors (e.g., show an error message)
     }
   };
   
