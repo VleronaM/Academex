@@ -53,14 +53,21 @@ const UserCoursesDashboard = () => {
     }
   };
 
-  const handleInputChange = (e) => {
+  const handleAddInputChange = (e) => {
+    const { name, value } = e.target;
+    setNewUserCourse((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
+  const handleEditInputChange = (e, id) => {
     const { name, value } = e.target;
     setEditedUserCourse((prevState) => ({
       ...prevState,
       [name]: value,
     }));
   };
-  
 
   const addUserCourse = async () => {
     try {
@@ -93,7 +100,6 @@ const UserCoursesDashboard = () => {
     setEditUserCourseId(id);
     setEditedUserCourse({ userId, courseId });
   };
-
 
   const updateUserCourse = async () => {
     try {
@@ -149,7 +155,7 @@ const UserCoursesDashboard = () => {
                       <select
                         name="userId"
                         value={editedUserCourse.userId}
-                        onChange={handleInputChange}
+                        onChange={(e) => handleEditInputChange(e, userCourse.id)}
                         style={{ width: "70px" }}
                       >
                         {users.map((user) => (
@@ -168,7 +174,7 @@ const UserCoursesDashboard = () => {
                       <select
                         name="courseId"
                         value={editedUserCourse.courseId}
-                        onChange={handleInputChange}
+                        onChange={(e) => handleEditInputChange(e, userCourse.id)}
                         style={{ width: "70px" }}
                       >
                         {courses.map((course) => (
@@ -216,7 +222,7 @@ const UserCoursesDashboard = () => {
             <select
               name="userId"
               value={newUserCourse.userId}
-              onChange={handleInputChange}
+              onChange={handleAddInputChange}
               style={{ width: "150px", marginRight: "10px" }}
             >
               <option value="">Select User</option>
@@ -226,10 +232,11 @@ const UserCoursesDashboard = () => {
                 </option>
               ))}
             </select>
+
             <select
               name="courseId"
               value={newUserCourse.courseId}
-              onChange={handleInputChange}
+              onChange={handleAddInputChange}
               style={{ width: "150px", marginRight: "10px" }}
             >
               <option value="">Select Course</option>
@@ -239,6 +246,7 @@ const UserCoursesDashboard = () => {
                 </option>
               ))}
             </select>
+
             <button onClick={addUserCourse}>Add User Course</button>
           </div>
         </div>
