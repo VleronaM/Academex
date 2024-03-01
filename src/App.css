@@ -167,6 +167,12 @@ p {
   background-color: #fff;
 }
 
+.dashboard-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 27vh;
+}
 
 @media screen and (max-width: 768px) {
 
@@ -199,7 +205,8 @@ p {
 
 }
 
-.login-form, .register-form {
+.login-form,
+.register-form {
   display: flex;
   flex-direction: column;
   background-image: linear-gradient(79deg, #E90064 white);
@@ -213,6 +220,7 @@ p {
     margin: 0.5rem;
   }
 }
+
 .loginApp label {
   text-align: left;
   padding: 0.25rem 0;
@@ -241,6 +249,7 @@ p {
   border: none;
   box-shadow: none;
 }
+
 /* Responsive Styles */
 
 @media screen and (max-width: 768px) {
