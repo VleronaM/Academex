@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, useNavigate } from 'react-router-dom';
 import Header from './components/Common/Common/Header';
 import Footer from './components/Common/Common/Footer';
-import Home from "./components/Home/Home";
+import Home from './components/home/Home';
 import About from './components/about/About';
 import CourseHome from './components/allcourses/CourseHome';
 import Team from './components/team/Team';

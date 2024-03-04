@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Head from "./Head";
-import Hero from "../../Home/hero/Hero";
+// import Hero from "../../home/hero/Hero";
 import "./style/header.css";
 import { Link } from "react-router-dom";
 

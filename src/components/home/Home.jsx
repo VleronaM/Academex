@@ -1,7 +1,7 @@
 import React from 'react'
 import './hero/hero.css'
 import './home.css'
-import Hero from "./hero/Hero"
+import Hero from './hero/Hero'
 import CategoriesCard from '../categories/CategoriesCard'
 const Home = () => {
     return (
@@ -13,4 +13,4 @@ const Home = () => {
     )
 }
 
-export default Home
+export default Home;
