@@ -43,6 +43,7 @@ const Footer = () => {
                         <li>Contact</li>
                     </ul>
                 </div>
+                <div className="recent">
                 <div className="container-bxo">
                 <h3> Recent Post </h3>
                 <div className="bxo">
@@ -64,6 +65,7 @@ const Footer = () => {
                     })}
                 </div>
                 </div>
+                </div>
                 <div className="box last">
                     <h3>Have a Question?</h3>
                     <ul className="info">
@@ -81,7 +83,7 @@ const Footer = () => {
                         </li>
                     </ul>
                 </div>
-            </div>
+                </div>
           </footer>
           <div className="legal">
             <p>Copyright @2023 All rights reserved | Website design by Academex Team | Privacy Policy  </p>
