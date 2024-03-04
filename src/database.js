@@ -167,8 +167,8 @@ export const team = [
         work: "DEVELOPER AND LEAD INSTRUCTOR",
     },
     {
-        cover: "../images/albini.jpg",
-        name: "Ph.D Albin Lahu",
+        cover: "https://as2.ftcdn.net/v2/jpg/05/22/11/23/1000_F_522112353_aSznFh7yyJ8RFQDZGGa91oJgfXx36pFk.jpg",
+        name: "Ph.D Filan Fisteku",
         work: "DEVELOPER AND LEAD INSTRUCTOR",
     },
 
