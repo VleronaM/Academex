@@ -16,10 +16,13 @@ const BooksCard = () => {
   return (
     <>
       <section className='books'>
-        <div className='container'>
-          <Title title='Download Your Favorite Books for Free!' />
-          <div className='content grid3'>
+        <div className='books-container'>
+          <div className='books-title'>
+          <h1>Download Your Favorite Books for Free!</h1>
+          </div>
+          <div className='books-content'>
             {books.map((val) => (
+              <div className='books-box'>
               <div className="box" key={val.id}>
                 <div className="img">
                   <img src={val.image} alt="" />
@@ -27,12 +30,13 @@ const BooksCard = () => {
                 <h1>{val.title}</h1>
                 <span>{val.author}</span>
                 <div>
-                  <button className='downloads'>
+                  <button className='books-downloads'>
                     <a href={val.link} className='button-link' target="_blank" rel="noopener noreferrer">
-                      Read now<i className="fa fa-download" aria-hidden="true"></i>
+                      Download<i className="fa fa-download" aria-hidden="true"></i>
                     </a>
                   </button>
                 </div>
+              </div>
               </div>
             ))}
           </div>

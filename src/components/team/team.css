@@ -65,11 +65,32 @@
 
 .team .shadow:hover{
     transform: scale(1.12);
-    
+
 }
 .team .shadow{
     border-radius: 10px;
 }
 .team img{
     border-radius: 10px 10px 0% 0%;
+}
+.team-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 100%;
+    gap: 30px;
+    padding: 20px;
+}
+
+@media screen and (min-width: 320px) and (max-width: 450px){
+    .team-container{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media screen and (min-width: 450px) and (max-width: 900px){
+    .team-container{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
 }

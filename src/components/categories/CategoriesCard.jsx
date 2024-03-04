@@ -9,8 +9,7 @@ const CategoriesCard = () => {
             <section className='online'>
                 <div className='container'>
                     <Title subtitle="Categories" title='Browse our categories' />
-
-                    <div className='content grid3'>
+                    <div className='content'>
                         {categories.map((val) => (
                             <div className="box">
                                 <div className="img">
@@ -19,10 +18,7 @@ const CategoriesCard = () => {
                                 <h1>{val.courseName}</h1>
                                 <span>{val.course}</span>
                             </div>
-
-                        )
-
-                        )}
+                        ))}
                     </div>
                 </div>
             </section>

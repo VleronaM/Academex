@@ -25,6 +25,29 @@
     margin: 0;
     padding: 0;
 }
+.hero .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.hero .button{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+.hero .primary-btn{
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+/* .home{
+    display: flex;
+    flex-direction: column;
+} */
 
 @media screen and (max-width: 768px) {
     .margin {
@@ -40,6 +63,9 @@
 
     .hero .row {
         width: 100%;
+    }
+    .hero p{
+        display: none;
     }
 
 }

@@ -59,7 +59,7 @@ const CoursesCard = () => {
     setEnrolledCourse(course);
     setShowModal(true);
   };
-  
+
 
   const handleConfirmEnroll = async () => {
     try {
@@ -72,7 +72,7 @@ const CoursesCard = () => {
       }
       await axios.post(`http://localhost:3030/users/${userId}/courses/create`, {
         userId: parseInt(userId), // Parse userId to ensure it's an integer
-        courseId: enrolledCourse.id 
+        courseId: enrolledCourse.id
       });
       alert('You have successfully enrolled in the course.');
       window.location.href = `/courses/${enrolledCourse.id}`;
@@ -80,8 +80,8 @@ const CoursesCard = () => {
       console.error('Error enrolling user in course:', error);
     }
   };
-  
-  
+
+
 
   const handleCancelEnroll = () => {
     setShowModal(false);
@@ -108,7 +108,7 @@ const CoursesCard = () => {
       <div className="coursesCard-container">
         {currentCourses.map((course) => (
           <div className="coursesCard-item" key={course.id}>
-            <div className="content">
+            <div className="coursesCard-content">
               <h2 className="coursesCard-title">{course.title}</h2>
               <img src={course.image} alt={course.title} />
               <p className="coursesCard-lecturer">{course.lecturer}</p>

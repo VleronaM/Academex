@@ -8,7 +8,6 @@ const Hero = () => {
         <>
             <section className='hero'>
                 <div className="container">
-                    <div className="row">
                         <Title subtitle='Welcome to academex' title='Best Online Learning Platform' />
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur odio, consectetur debitis autem id cumque nihil, consequatur recusandae adipisci dolorem saepe quos molestias repellendus atque quibusdam blanditiis eos quod quis.</p>
                         <div className='button'>
@@ -17,14 +16,12 @@ const Hero = () => {
                                     Browse Courses<i className='fa fa-long-arrow-alt-right'></i>
                                 </button>
                             </Link>
-                            <button>
+                            <button className="second-btn">
                                 Download free books! <i className='fa fa-long-arrow-alt-right'></i>
                             </button>
                         </div>
-                    </div>
                 </div>
             </section>
-            <div className="marigin"></div>
         </>
     )
 }

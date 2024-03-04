@@ -12,11 +12,13 @@ export default function Categories({ categories, onSelectCategory, onSearch, sel
   };
 
   const handleShowAll = () => {
-    onSelectCategory(""); 
+    onSelectCategory("");
   };
 
   return (
-    <div className="categories section">
+    // <section className="coursesCategories"></section>
+    <div className='container-categories'>
+    <div className="categories-section">
       <h2 className="categories-h2">Categories</h2>
       <div className="categories-container">
         {categories.map((category) => (
@@ -34,6 +36,7 @@ export default function Categories({ categories, onSelectCategory, onSearch, sel
           </button>
         </div>
       </div>
+      </div>
       <div className="search-box">
         <input
           type="text"
@@ -44,7 +47,7 @@ export default function Categories({ categories, onSelectCategory, onSearch, sel
         <button className="button">
           <FontAwesomeIcon icon={faSearch} />
         </button>
-      </div>
+    </div>
     </div>
   );
 }

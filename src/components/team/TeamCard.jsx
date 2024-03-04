@@ -3,7 +3,7 @@ import { team } from '../../database'
 import "./team.css"
 const TeamCard = () => {
     return (
-        <>
+        <div className='team-container'>
             {team.map((val) => (
                 <div className="items shadow">
                     <div className="img">
@@ -19,7 +19,7 @@ const TeamCard = () => {
                 </div>
 
             ))}
-        </>
+        </div>
     )
 }
 

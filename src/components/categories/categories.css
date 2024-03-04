@@ -1,5 +1,5 @@
 .coursesCard {
-    padding: 50px 0;
+    padding: 20px;
 }
 
 .coursesCard .items {
@@ -38,6 +38,8 @@
     background-color: #fff;
     padding: 30px 20px;
     transition: 0.5s;
+    border-radius: 5px;
+
 }
 
 .online .img {
@@ -68,7 +70,7 @@
     font-weight: 500;
     font-size: 20px;
     color: #E90064;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 .online .box .show {
@@ -77,4 +79,53 @@
 
 .online .box:hover {
     background-color: #E90064;
+}
+.online .content{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .online .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: auto;
+}
+@media screen and (max-width: 768px) {
+.online .content{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.online .box {
+    background-color: #fff;
+    padding: 10px 10px;
+    transition: 0.5s;
+    height: 160px;
+    border-radius: 5px;
+}
+.online .img {
+    width: 40px;
+    height: 40px;
+}
+.online h1 {
+    font-size: 14px;
+    margin: 10px 0;
+    line-height: 17px;
+}
+.online span {
+    padding: 5px 20px;
+    font-weight: 500;
+    font-size: 16px;
+    border-radius: 5px;
+    display: flex;
+    width: 90px;
+}
+.online .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 }

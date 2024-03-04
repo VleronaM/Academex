@@ -21,16 +21,17 @@ const AboutCard = () => {
       })
       .catch((error) => console.error('Error fetching About Us data:', error));
   }, []);
-  
+
   return (
     <>
       <section className='aboutHome'>
-        <div className="container flexSB">
-          <div className="left row">
+        <div className="aboutHome-container">
+          <div className='about-head'>
+        <Title subtitle="Learn Anything" title='Unlock Knowledge with Academex' />
+          <div className="mainImage">
             <img src="https://images.unsplash.com/photo-1584697964328-b1e7f63dca95?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="" />
           </div>
-          <div className='right row'>
-            <Title subtitle="Learn Anything" title='Unlock Knowledge with Academex' />
+          </div>
             <div className='items'>
               {aboutUsEntries.map((val) => (
                 <div className="item flexSB" key={val.id}>
@@ -44,7 +45,6 @@ const AboutCard = () => {
                 </div>
               ))}
             </div>
-          </div>
         </div>
       </section>
       <AWrapper />

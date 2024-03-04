@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { awrapper2 } from '../../database';
+import './about.css';
 
 const AWrapper = () => {
   const [aboutUsData, setAboutUsData] = useState([]);
@@ -15,16 +16,17 @@ const AWrapper = () => {
   return (
     <>
       <section className='awrapper'>
-        <div className="container grid">
+        <div className="container-grid">
           {aboutUsData.map((val) => (
-            <div className="box flex" key={val.id}>
+            <div className='aboutUs-container'>
+            <div className="aboutUs-container" key={val.id}>
               <div className='img'>
                 <img src={val.cover} alt="" />
               </div>
               <div className="text">
-                <h1>{val.data}</h1>
                 <h3>{val.title}</h3>
               </div>
+            </div>
             </div>
           ))}
         </div>

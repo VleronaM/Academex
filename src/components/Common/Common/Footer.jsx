@@ -7,11 +7,11 @@ const Footer = () => {
         <>
           <section className="newletter">
             <div className="container flexSB">
-                <div className="left row">
+                <div className="left">
                     <h1>Newsletter - Stay tune and get the latest update</h1>
                     <span>Learn anytime, anywhere with ACADEMEX</span>
                 </div>
-                <div className="right row">
+                <div className="right">
                     <input type="text" placeholder = "Enter email address" />
                     <i className = 'fa fa-paper-plane'></i>
                 </div>
@@ -24,9 +24,11 @@ const Footer = () => {
                   <img src="./logo/academex_pink@2x.png" alt=""/>
                     <span>Online education and learning</span>
                     <p>Join Academex and start your journey to professionalism at your own pace </p>
+                    <div className="icons">
                     <i className='fab fa-facebook iconn'></i>
                     <i className='fab fa-instagram iconn'></i>
                     <i className='fab fa-twitter iconn'></i>
+                    </div>
                 </div>
                 <div className="box link">
                     <h3>Quick Links</h3>

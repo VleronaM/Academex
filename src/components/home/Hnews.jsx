@@ -8,7 +8,7 @@ const Hnews = () => {
             <section className='news'>
                 <div className="container">
                     <Title subtitle="Our news" title='Recent from us.' />
-                    <NewsCard />
+                    {/* <NewsCard /> */}
                 </div>
             </section>
         </div>

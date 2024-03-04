@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Head from "./Head";
+import Hero from "../../Home/hero/Hero";
 import "./style/header.css";
 import { Link } from "react-router-dom";
 
@@ -8,7 +9,7 @@ const Header = ({ loggedIn, userRole, setLoggedIn, setUserRole }) => {
 
   const handleLogout = () => {
     localStorage.clear();
-    window.location.reload(); 
+    window.location.reload();
   };
 
   return (
@@ -51,7 +52,7 @@ const Header = ({ loggedIn, userRole, setLoggedIn, setUserRole }) => {
           </ul>
           <div className="start">
             {loggedIn ? (
-              <button className="logout-btn" onClick={handleLogout}>Log Out</button>
+              <button className="login-btn" onClick={handleLogout}>Log Out</button>
             ) : (
               <Link to='/login'>
                 <button className="login-btn">Log In</button>

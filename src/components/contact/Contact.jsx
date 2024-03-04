@@ -34,11 +34,11 @@ const Contact = () => {
     return (
         <>
             < Back title='Contact Us' />
-            <section className='contact padding'>
-                <div className="container shadoww flexSB">
-                    {<div className="left row ">
+            <section className='contact'>
+                <div className="contact-container">
+                    <div className="map">
                         <iframe src={map} className="map-container"></iframe>
-                    </div>}
+                    </div>
                     <div className="right row">
                         <h1>Contact Us</h1>
                         <p> Ask us anything or just say hi...</p>

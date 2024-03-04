@@ -7,11 +7,7 @@ const News = () => {
     return (
         < >
             <Back title='News' />
-            <section className='news padding'>
-                <div className='container grid2'>
-                    <NewsCard />
-                </div>
-            </section>
+              <NewsCard />
         </ >
     )
 }

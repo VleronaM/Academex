@@ -3,6 +3,7 @@ import './news.css';
 
 const NewsCard = () => {
     const [news, setNews] = useState([]);
+    const [expandedIndex, setExpandedIndex] = useState(null);
 
     useEffect(() => {
         fetch('http://localhost:3030/news')
@@ -14,6 +15,9 @@ const NewsCard = () => {
     const formatDate = (dateString) => {
         const options = { year: 'numeric', month: 'numeric', day: 'numeric' };
         return new Date(dateString).toLocaleDateString(undefined, options);
+    };
+    const handleReadMoreClick = (index) => {
+        setExpandedIndex(index === expandedIndex ? null : index);
     };
 
     return (
@@ -31,8 +35,14 @@ const NewsCard = () => {
                             </span>
                         </div>
                         <h1>{val.title}</h1>
-                        <p>{val.content}</p>
-                        <a href="#" className="read-more">Read More</a> 
+                        {expandedIndex === index ? (
+                            <p>{val.content}</p>
+                        ) : (
+                            <p>{val.content.slice(0, 50)}...</p>
+                        )}
+                        <p className="read-more" onClick={() => handleReadMoreClick(index)}>
+                            {expandedIndex === index ? 'Read Less' : 'Read More'}
+                        </p>
                     </div>
                 </div>
             ))}

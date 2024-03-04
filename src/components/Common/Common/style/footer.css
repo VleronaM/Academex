@@ -1,5 +1,5 @@
 .newletter{
-   background-color:#E90064; 
+   background-color:#E90064;
    /* margin-top: 50px; */
    padding: 50px 0;
    color: #fff;
@@ -38,7 +38,7 @@
     cursor: pointer;
 }
 
-.quickLinks{ 
+.quickLinks{
     display: grid;
     grid-template-columns:2fr 2fr 2fr ;
        grid-gap: 25px;
@@ -71,16 +71,6 @@ footer .container{
     padding-top: 50px;
     padding-bottom: 50px;
 }
-@media screen and (max-width: 768px) {
-    footer .container {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-  @media screen and (max-width: 400px) {
-    footer .container {
-      grid-template-columns: repeat(1, 1fr);
-    }
-  }
 footer .logo span{
     color: rgba(0, 0, 0, 0.599);
     font-size: 20px;
@@ -91,8 +81,6 @@ footer .logo p{
     margin: 30px 0 15px 0;
     font-weight: 300;
 }
-
-
 .iconn{
     width: 40px;
     height: 40px;
@@ -104,8 +92,7 @@ footer .logo p{
     transition: 0.5s;
     margin-left: 12px;
   }
-  
-  .iconn:hover {
+.iconn:hover {
     cursor: pointer;
     background-color: #E90064;
     color: azure;
@@ -174,4 +161,48 @@ footer .last i{
 
 .info li{
     font-weight: 500;
+}
+@media screen and (max-width: 900px) {
+    footer .container {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    .left{
+      display: flex;
+      flex-direction: column;
+    }
+    .right{
+      width: 100%;
+    }
+    .newletter .left,
+    .newletter .right{
+    padding-right: 0px;
+    }
+    .iconn{
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        border-radius: 50%;
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.3);
+        color: #E90064;
+        transition: 0.5s;
+        margin-left: 12px;
+        display: flex;
+        flex-direction: row;
+        gap:10px;
+      }
+    .icons{
+        display: flex;
+        gap: 10px;
+    }
+  }
+  @media screen and (min-width: 768px) and (max-width: 1000px) {
+    footer .container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+}
+    @media screen and (min-width:1000px) and (max-width: 1420px) {
+        footer .container {
+          grid-template-columns: repeat(3, 1fr);
+        }
 }
