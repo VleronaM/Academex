@@ -7,6 +7,8 @@ import UsersDashboardCard from './UsersDashboardCard';
 import ContactDashboardCard from './ContactDashboardCard';
 import CategoriesDashboardCard from './CategoriesDashboardCard';
 import UserCoursesDashboard from './UserCoursesDashboard ';
+import DirectorDaschboardCard from './DirectorDashboardCard'
+import MovieDashboard from './MovieDashboard';
 
 const Dashboard = () => {
     return (
@@ -19,6 +21,8 @@ const Dashboard = () => {
             <BooksDashboardCard />
             <UsersDashboardCard />
             <UserCoursesDashboard />
+            <DirectorDaschboardCard />
+            <MovieDashboard />
         </>
     )
 }
